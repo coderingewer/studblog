@@ -1,0 +1,91 @@
+@media only screen and (max-width: 1000px) {
+  #addpost {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: absolute;
+    top: 100px;
+  }
+  #editor-form {
+    width: 100%;
+    padding-bottom: 100px;
+  }
+
+  .form-input {
+    min-width: 250px;
+  }
+
+  #editor-form-btn {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+@media only screen and (min-width: 1001px) {
+  #addpost {
+    width: 500px;
+    position: relative;
+  }
+
+  #editor-form {
+    margin: 10px;
+    justify-content: center;
+  }
+
+  .form-input {
+    width: 500px;
+  }
+
+  .form-input {
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 30px;
+    background-color: white;
+    text-align: center;
+  }
+
+  #editor-form-btn {
+    margin: 5px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+#addpost {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#editor-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-input {
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: 30px;
+  background-color: white;
+  text-align: center;
+}
+
+#editor-form-btn {
+  color: aliceblue;
+  background-color: rgb(82, 170, 68);
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+}
+
+#editor-form label{
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}

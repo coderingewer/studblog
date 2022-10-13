@@ -1,0 +1,36 @@
+@media only screen and (max-width: 1000px) {
+  #home-page {
+    position: -webkit-sticky;
+    position: relative;
+    top: 100px;
+    width: 90%;
+    margin: 0 auto;
+    overflow: scroll;
+  }
+  #popular {
+    display: none;
+  }
+  #leftpage {
+    display: none;
+  }
+  #posts {
+    padding-bottom: 100px;
+  }
+}
+
+@media only screen and (min-width: 1001px) {
+  #home-page {
+    position: relative;
+    height: 100%;
+    display: flex;
+  }
+
+  #posts {
+    position: relative;
+    top: 0;
+    margin-right: 5%;
+    width: 500px;
+    height: 100%;
+    overflow: scroll;
+  }
+}

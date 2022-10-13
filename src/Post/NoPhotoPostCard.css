@@ -1,0 +1,43 @@
+.no-img-postcard-pp{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    left: 20px;
+}
+.no-img-postcard-pp img{
+    width: 100%;
+    height: 100%;
+}
+
+.nopimg-poscard{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    height: 70px;
+    position: relative;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.no-img-postcard-content{
+    position: absolute;
+    left: 70px;
+    right: 10px;
+    height: 100%;
+    justify-content: center;
+    word-wrap: break-word;
+    word-break: keep-all;
+    overflow: hidden;
+}
+
+.no-img-postcard-content p{
+    position: relative;
+    top: 12%;
+    font-size: 14px;
+    font-weight: 500;
+}

@@ -1,0 +1,132 @@
+.App {
+  height: 100vh;
+  display: flex;
+}
+
+.title h1 {
+  font-size: 24px;
+  opacity: 70%;
+}
+
+.title {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(2px);
+  position: -webkit-sticky;
+  position: sticky;
+  height: 40px;
+  text-align: center;
+  display: flex;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  top: 10px;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: rgb(65, 85, 19);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #b8b8b8;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(139, 219, 119);
+}
+
+@media only screen and (min-width: 1001px) {
+  .App {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+}
+@media only screen and (max-width: 1000px) {
+  .App{
+    justify-content: center;
+  }
+  .searchpost button{
+    right: 20px;
+  }
+}
+
+
+.icon {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  background-color: rgb(255, 255, 255);
+}
+.icon img {
+  width: 20px;
+}
+
+.formdiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 100vh;
+  width: 500px;
+}
+
+.searchpost{
+  position: relative;
+  top: 20px;
+  display: flex;
+  justify-content: end;
+}
+#disabled {
+  display: none;
+}
+.searchpost input{
+  border: none;
+  height: 40px;
+  text-align: center;
+  border-radius: 30px;
+  font-weight: 500;
+  padding-right: 50px;
+  background-color:white ;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
+}
+.searchpost button{
+  position: absolute;
+  top: 6px;
+  border: none;
+  width: 50px;
+  height: 30px;
+  background: none;
+}
+
+.postcardmore {
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  position: absolute;
+  right: 20px;
+  border-radius: 50%;
+  border-radius: 50px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+}

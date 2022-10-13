@@ -1,0 +1,236 @@
+@media only screen and (max-width: 1000px) {
+  #profile-posts {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 100px;
+    min-height: 300px;
+    max-height: 500px;
+    width: 90%;
+    padding-bottom: 100px;
+    top: 200px;
+  }
+  #profile-page {
+    width: 100%;
+  }
+
+  .profile {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .profilepage-btns {
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    width: 150px;
+    right: 20px;
+    z-index: 2;
+    display: flex;
+    justify-content: end;
+    bottom: 100px;
+    height: 50px;
+  }
+  #edit-icon-prf {
+    position: relative;
+    right: 30px;
+  }
+
+  #profile-details {
+    top: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 90%;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    height: 150px;
+  }
+
+  #profile-details img {
+    left: 10px;
+    top: 10px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .username {
+    left: 100px;
+    top: calc(30% - 20px);
+    font-size: 14px;
+  }
+
+  .profile-info {
+    margin-bottom: 20px;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .profile-info h1 {
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 14px;
+  }
+}
+
+#profile-posts {
+  position: absolute;
+  overflow: scroll;
+}
+
+#profile-details {
+  position: relative;
+  top: 100px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+#profile-details img {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.25);
+}
+
+.username {
+  position: absolute;
+}
+
+.profile-info {
+  position: absolute;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.profile-info h1 {
+  position: relative;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+@media only screen and (min-width: 1001px) {
+  #profile-posts {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 400px;
+    max-width: 500px;
+    min-width: 300px;
+  }
+  .profile {
+    display: flex;
+  }
+
+  #profile-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    right: 0;
+  }
+
+  #profile-details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 20px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 90%;
+  }
+
+  #profile-details img {
+    top: 10px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .username {
+    top: 80px;
+    font-size: 20px;
+  }
+
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    top: 150px;
+    bottom: 0;
+    align-items: center;
+    justify-content: start;
+  }
+  .profile-info h1 {
+    font-size: 14px;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  }
+  .profilepage-btns {
+    display: none;
+  }
+}
+
+.profile-nav {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+}
+.profile-nav h1 {
+  font-size: 16px;
+  padding: 5px;
+  width: 100px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.noprofile-page{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.noprofile-page a {
+  padding: 10px;
+  width: 100px;
+  color: rgb(10, 10, 10);
+  text-align: center;
+  border-radius: 10px;
+}
+
+.signup-btn{
+  margin-top: 10px;
+  box-shadow: 0px 0px 11px rgba(6, 241, 65, 0.5);
+}
+
+.login-btn{
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 11px rgba(211, 192, 19, 0.5);
+}
+
+
+.noprofile-page p{
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.signout-btn{
+  position: absolute;
+  z-index: 2;
+  border: none;
+  padding: 5px;
+  right: 20px;
+  top: 10px;
+  color: rgba(255, 0, 0, 0.527);
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px rgba(255, 0, 0, 0.5);
+background-color: rgb(255, 255, 255);
+}

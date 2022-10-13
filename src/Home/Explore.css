@@ -1,0 +1,47 @@
+@media only screen and (min-width: 1001px) {
+.popular-posts{
+    top: 100px;
+    width: 100%;
+    height: 500px;
+    overflow: scroll;
+}
+
+#popular {
+    position: relative;
+    height: 100%;
+    right: 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+
+  }
+
+  .searchpost{
+    min-width: 300px;
+  }
+  .searchpost input{
+    min-width: 250px;
+    font-size: 14px;
+  }
+
+
+}
+
+  @media only screen and (max-width: 1000px) {
+    #popular{
+     display: none;
+    } 
+
+    .popular-posts{
+      position: relative;
+      top: 150px;
+      width: 100%;
+      height: 100%;
+  }
+   
+   }
+   
+   .popular-posts{
+    position: relative;
+}
