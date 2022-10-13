@@ -1,25 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
-import { useParams } from 'react-router'
 import logo from "../logo.png";
-import tech from "../icons/categories-icons-tech.png";
 import { MdOutlineCreate } from "react-icons/md";
 import { CgDetailsMore, CgProfile } from "react-icons/cg";
 import { useSelector } from "react-redux";
-import {GiMaterialsScience} from "react-icons/gi"
-import {GrTechnology} from "react-icons/gr"
-import {BsPalette} from "react-icons/bs"
-import {IoSchoolOutline} from "react-icons/io5"
-import {TbMapSearch} from "react-icons/tb"
+import { GiMaterialsScience } from "react-icons/gi"
+import { GrTechnology } from "react-icons/gr"
+import { BsPalette } from "react-icons/bs"
+import { IoSchoolOutline } from "react-icons/io5"
+import { TbMapSearch } from "react-icons/tb"
 
 function Leftpage() {
-  const [active, setActive] = useState("")
   const category = useSelector(state => state.posts.currentcategory)
-  const ChoiceCategory = (id) => {
-    setActive(id)
-  };
-  console.log(category)
   return (
     <div id="leftpage">
       <a href="/" className="link">
@@ -34,12 +27,12 @@ function Leftpage() {
           </div>
           <a href="/posts/teknoloji">
 
-          <div
-            className="category-icon icon"
+            <div
+              className="category-icon icon"
             >
-            <GrTechnology />
-          </div>
-            </a>
+              <GrTechnology />
+            </div>
+          </a>
         </div>
         <div className="category-area">
           <div id={category === "bilim" ? "sci" : "disabled"} className="category demo">
@@ -47,12 +40,12 @@ function Leftpage() {
           </div>
           <a href="/posts/bilim">
 
-          <div
-            className="category-icon icon"
+            <div
+              className="category-icon icon"
             >
-            <GiMaterialsScience />
-          </div>
-            </a>
+              <GiMaterialsScience />
+            </div>
+          </a>
         </div>
         <div className="category-area">
           <div id={category === "sanat" ? "art" : "disabled"} className="category demo">
@@ -60,12 +53,12 @@ function Leftpage() {
           </div>
           <a href="/posts/sanat">
 
-          <div
-            className="category-icon icon"
+            <div
+              className="category-icon icon"
             >
-            <BsPalette/>
-          </div>
-            </a>
+              <BsPalette />
+            </div>
+          </a>
         </div>
         <div className="category-area">
           <div id={category === "eğitim" ? "edu" : "disabled"} className="category demo">
@@ -73,23 +66,23 @@ function Leftpage() {
           </div>
           <a href="/posts/eğitim">
 
-          <div
-            className="category-icon icon"
+            <div
+              className="category-icon icon"
             >
-            <IoSchoolOutline/>
-          </div>
-            </a>
+              <IoSchoolOutline />
+            </div>
+          </a>
         </div>
         <div className="category-area">
           <div id={category === "tanıtım" ? "gui" : "disabled"} className="category demo">
             <p>Tanıtım</p>
           </div>
           <a href="/posts/tanıtım">
-          <div
-            className="category-icon icon"
-          >
-            <TbMapSearch/>
-          </div>
+            <div
+              className="category-icon icon"
+            >
+              <TbMapSearch />
+            </div>
           </a>
         </div>
         <div className="category-area">
@@ -100,7 +93,7 @@ function Leftpage() {
             <div
               className="category-icon icon"
             >
-              <CgDetailsMore/>
+              <CgDetailsMore />
             </div>
           </a>
         </div>

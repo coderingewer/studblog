@@ -1,8 +1,5 @@
 import React from "react";
 import "./BottomBar.css";
-import editicon from "../icons/Edit.svg";
-import Homepage from "../icons/Homepage.svg";
-import Usericon from "../icons/User.svg";
 import { Link } from "react-router-dom";
 import {CgProfile, CgSearchLoading} from "react-icons/cg"
 import { AiOutlineHome } from "react-icons/ai";

@@ -1,11 +1,8 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import "./Post.css";
 import trashicon from "../icons/trash2.svg";
-import seenicon from "../icons/Seen.svg";
-import morelogo from "../icons/post-post-more.svg";
 import { Link, useParams } from "react-router-dom";
 import PopularPosts from "../Home/PopularPosts";
-import sharelogo from "../icons/Share.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { GetPostByIdAsync } from "../Redux/Posts/PostSlice";
 import ShareCard from "./ShareCard";

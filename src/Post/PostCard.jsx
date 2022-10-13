@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./PostCard.css";
-import sharelogo from "../icons/Share.svg";
 import { Link } from "react-router-dom";
-import Post from "./Post";
 import ShareCard from "./ShareCard";
 import { AiOutlineShareAlt } from "react-icons/ai";
 
