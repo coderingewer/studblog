@@ -9,8 +9,9 @@ import sharelogo from "../icons/Share.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { GetPostByIdAsync } from "../Redux/Posts/PostSlice";
 import ShareCard from "./ShareCard";
-import { AiOutlineEdit } from "react-icons/ai";
+import { AiOutlineEdit, AiOutlineShareAlt } from "react-icons/ai";
 import { RiCloseLine } from "react-icons/ri";
+import {FiEye, FiMoreVertical} from "react-icons/fi"
 
 function Post() {
   const dispatch = useDispatch();
@@ -67,7 +68,7 @@ function Post() {
                   id="share-icon"
                   className="icon"
                 >
-                  <img src={sharelogo} alt="" />
+                  <AiOutlineShareAlt/>
                 </div>
                 <div
                   className="more-card-item-card"
@@ -86,7 +87,7 @@ function Post() {
                 </div>
               </div>
               <div id="postseen">
-                <img src={seenicon} alt="" />
+                <FiEye />
                 <h1>{post.views}</h1>
               </div>
               <div
@@ -94,7 +95,7 @@ function Post() {
                 className="postcardmore icon"
                 id="post-more"
               >
-                <img src={morelogo} alt="" />
+                <FiMoreVertical />
               </div>
             </div>
           </div>

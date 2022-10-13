@@ -19,6 +19,16 @@ export const GetPopularPosts = createAsyncThunk(
   }
 );
 
+export const GetByCategory = createAsyncThunk(
+  "posts/getByCategory",
+  async (category) => {
+    const res = await axios.get(
+      `${process.env.REACT_APP_REQUEST_DOMAIN}posts/getByCategory/`+ category
+    );
+    return res.data;
+  }
+);
+
 export const GetPostByIdAsync = createAsyncThunk(
   "posts/GetPostByIdAsync",
   async (id) => {
@@ -63,8 +73,9 @@ const PostSlice = createSlice({
     image: {},
     populars: [],
     notfound: false,
-    filtered:[],
+    filtered: [],
     searching: false,
+    currentcategory :""
   },
   reducers: {
     searchPosts: (state, action) => {
@@ -97,6 +108,10 @@ const PostSlice = createSlice({
     [GetPopularPosts.fulfilled]: (state, action) => {
       state.populars = action.payload;
     },
+    [GetByCategory.fulfilled]: (state, action) => {
+      state.items = action.payload
+      state.currentcategory = action.meta.arg
+    }
   },
 });
 

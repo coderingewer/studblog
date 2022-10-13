@@ -3,11 +3,13 @@ import { useFormik } from "formik";
 import React, { useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import "./Addpost.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addPostsAsync } from "../Redux/Posts/PostSlice";
+import { Navigate } from "react-router";
 
 function PostEditor() {
   const dispatch = useDispatch();
+  const user = useSelector(state=>state.users.user)
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
     useFormik({
       initialValues: {
@@ -55,6 +57,7 @@ function PostEditor() {
     "Eğitim",
     "Tanıtım",
     "Teknoloji",
+    "Edebiyat",
     "Diğer",
   ];
   return (
@@ -113,6 +116,7 @@ function PostEditor() {
           Sonraki
         </button>
       </form>
+      {!user.isValid && <Navigate to = "/be-blogger"/> }
     </div>
   );
 }

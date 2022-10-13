@@ -4,6 +4,7 @@ import sharelogo from "../icons/Share.svg";
 import { Link } from "react-router-dom";
 import Post from "./Post";
 import ShareCard from "./ShareCard";
+import { AiOutlineShareAlt } from "react-icons/ai";
 
 function PostCard(props) {
   const [status, setStatus] = useState(false);
@@ -43,7 +44,7 @@ function PostCard(props) {
           id="share-icon"
           className="icon"
         >
-          <img src={sharelogo} alt="paylaş"  />
+          <AiOutlineShareAlt/>
         </div>
       </div>
       <div

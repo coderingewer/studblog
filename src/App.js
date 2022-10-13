@@ -17,6 +17,8 @@ import React from 'react';
 import UnLoginPage from './User/UnLoginPage';
 import { useSelector } from 'react-redux';
 import UploadImage from './Media/UploadImage';
+import GetPostsByCategory from './Post/GetPostsByCategory';
+import BeBlogger from './Post/BeBlogger';
 
 function App() {
   const success = useSelector(state => state.users.user);
@@ -38,6 +40,8 @@ function App() {
           <Route path='/explore' element={<Explore />} />
           <Route path='/uploadimage' element={<UploadImage />} />
           <Route path='/updateimage/:imageId' element={<UploadImage />} />
+          <Route path='/posts/:category' element={<GetPostsByCategory />} />
+          <Route path='/be-blogger' element={<BeBlogger />} />
         </Routes>
       </Router>
     </header>

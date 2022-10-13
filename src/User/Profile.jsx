@@ -8,6 +8,7 @@ import { getUserByIdAsync, signOut } from "../Redux/Users/UserSlice";
 import "./Profile.css";
 import Bottombar from "../bars/Bottombar";
 import ListCard from "../Lists/ListCard";
+import {MdOutlineCreate} from "react-icons/md"
 
 function Profile() {
   const dispatch = useDispatch();
@@ -63,7 +64,7 @@ function Profile() {
       <div className="profilepage-btns">
         <Link className="link" to="/createpost">
           <div className="icon" id="edit-icon-prf">
-            <img src={editicon} alt="" />
+            <MdOutlineCreate />
           </div>
         </Link>
       </div>

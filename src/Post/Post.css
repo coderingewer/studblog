@@ -54,7 +54,7 @@
     height: 110%;
     z-index: 2;
     position: absolute;
-    background-color: rgb(129, 40, 40);
+    background-color: rgb(255, 255, 255);
   }
   .trash-icon{
     right: 80px;
