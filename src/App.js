@@ -1,10 +1,8 @@
 import './App.css';
-import Bottombar from './bars/Bottombar';
 import Navbar from './bars/Navbar';
 import Home from './Home/Home';
-import Editor from './Post/Addpost';
 import Post from './Post/Post';
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import Profile from './User/Profile';
 import Login from './User/Login';

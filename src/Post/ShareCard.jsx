@@ -1,6 +1,8 @@
 import React from "react";
 import "./ShareCard.css";
 import icon from "../icons/Share.svg"
+import { AiFillTwitterCircle, AiOutlineLink } from "react-icons/ai";
+import { BsFacebook } from "react-icons/bs";
 
 function ShareCard(props) {
   function CopyText() {
@@ -18,14 +20,14 @@ function ShareCard(props) {
         <h4>Paylaş</h4>
         </div>
         <div className="share-icons">
-      <a className="link"  target="_blank" href={"https://twitter.com/intent/tweet?url=" + props.url}><img src={icon} alt="" /></a>
+      <a className="link"  target="_blank" href={"https://twitter.com/intent/tweet?url=" + props.url}><AiFillTwitterCircle className="icon"/></a>
       <a  className="link"  target="_blank" href={"https://www.facebook.com/sharer/sharer.php?u=" + props.url}>
-       <img src={icon} alt="" />
+       <BsFacebook className="icon"/>
       </a>
         </div>
       <div className="copy-text" >
       <textarea disabled onChange={()=>CopyText()} id="shareUrl" type="text" value={props.url} />
-      <button onClick={() => CopyText()}>Ba</button>
+      <button onClick={() => CopyText()}><AiOutlineLink/></button>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Bottombar from "../bars/Bottombar";
 import PostCard from "../Post/PostCard";
@@ -16,23 +16,23 @@ function Home() {
   console.log(posts);
   return (
     <>
-    <div id="home-page">
-      <div id="posts">
-        {posts.map((post) => (
-          <div key={post.ID}>
-            <PostCard
-              title={post.title}
-              authorpp={post.sender.user_image.url}
-              imgurl={post.image.url}
-              authorname={post.sender.name}
-              postId = {post.ID}
-            />
-          </div>
-        ))}
+      <div id="home-page">
+        <div id="posts">
+          {posts.map((post) => (
+            <div key={post.ID}>
+              <PostCard
+                title={post.title}
+                authorpp={post.sender.user_image.url}
+                imgurl={post.image.url}
+                authorname={post.sender.name}
+                postId={post.ID}
+              />
+            </div>
+          ))}
+        </div>
+        <PopularPosts />
       </div>
-      <PopularPosts />
-    </div>
-    <Bottombar/>
+      <Bottombar />
     </>
   );
 }

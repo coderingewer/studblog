@@ -69,6 +69,7 @@ const PostSlice = createSlice({
   initialState: {
     items: [],
     userposts: [],
+    category:[],
     item: {},
     image: {},
     populars: [],
@@ -109,7 +110,7 @@ const PostSlice = createSlice({
       state.populars = action.payload;
     },
     [GetByCategory.fulfilled]: (state, action) => {
-      state.items = action.payload
+      state.category = action.payload
       state.currentcategory = action.meta.arg
     }
   },

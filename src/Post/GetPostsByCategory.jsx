@@ -6,7 +6,7 @@ import { GetByCategory, GetPopularPosts } from '../Redux/Posts/PostSlice'
 import PostCard from './PostCard'
 
 function GetPostsByCategory() {
-    const posts = useSelector(state => state.posts.items)
+    const posts = useSelector(state => state.posts.category)
     const { category } = useParams()
     const dispatch = useDispatch()
     useEffect(() => {

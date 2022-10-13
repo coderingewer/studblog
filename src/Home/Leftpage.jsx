@@ -25,7 +25,7 @@ function Leftpage() {
           <div id={category === "teknoloji" ? "tech" : "disabled"} className="category">
             <p>Teknoloji</p>
           </div>
-          <a href="/posts/teknoloji">
+          <a href="/posts/teknoloji" className="link">
 
             <div
               className="category-icon icon"
@@ -38,7 +38,7 @@ function Leftpage() {
           <div id={category === "bilim" ? "sci" : "disabled"} className="category demo">
             <p>Bilim</p>
           </div>
-          <a href="/posts/bilim">
+          <a href="/posts/bilim" className="link">
 
             <div
               className="category-icon icon"
@@ -51,7 +51,7 @@ function Leftpage() {
           <div id={category === "sanat" ? "art" : "disabled"} className="category demo">
             <p>Sanat</p>
           </div>
-          <a href="/posts/sanat">
+          <a href="/posts/sanat" className="link">
 
             <div
               className="category-icon icon"
@@ -64,7 +64,7 @@ function Leftpage() {
           <div id={category === "eğitim" ? "edu" : "disabled"} className="category demo">
             <p>Eğitim</p>
           </div>
-          <a href="/posts/eğitim">
+          <a href="/posts/eğitim" className="link">
 
             <div
               className="category-icon icon"
@@ -77,7 +77,7 @@ function Leftpage() {
           <div id={category === "tanıtım" ? "gui" : "disabled"} className="category demo">
             <p>Tanıtım</p>
           </div>
-          <a href="/posts/tanıtım">
+          <a href="/posts/tanıtım" className="link">
             <div
               className="category-icon icon"
             >
@@ -89,7 +89,7 @@ function Leftpage() {
           <div id={category === "diğer" ? "other" : "disabled"} className="category demo">
             <p>Diğer</p>
           </div>
-          <a href="/posts/diğer" >
+          <a href="/posts/diğer" className="link">
             <div
               className="category-icon icon"
             >

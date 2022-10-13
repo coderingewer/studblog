@@ -51,16 +51,24 @@ function Explore() {
             <h1>Kategoriler</h1>
           </div>
           <div className="explore-categories">
-            <h1>Bilim</h1>
+          <a href="/posts/teknoloji" className="link">
             <h1>Teknoloji</h1>
-            <h1>Psikoloji</h1>
+            </a>
+            <a href="/posts/bilim" className="link">
+            <h1>Bilim</h1>
+            </a>
+            <a href="/posts/eğitim" className="link">
+            <h1>Eğitim</h1>
+            </a>
+            <a href="/posts/sanat" className="link">
+            <h1>Sanat</h1>
+            </a>
+            <a href="/posts/tanıtım" className="link">
             <h1>Tanıtım</h1>
-            <h1>Tanıtım</h1>
-            <h1>Tanıtım</h1>
-            <h1>Tanıtım</h1>
-            <h1>Tanıtım</h1>
-            <h1>Tanıtım</h1>
-            <h1>Tanıtım</h1>
+            </a>
+            <a href="/posts/diğer" className="link">
+            <h1>diğer</h1>
+            </a>
           </div>
         </div>
       </div>
