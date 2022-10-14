@@ -14,7 +14,7 @@ function Explore() {
   useEffect(()=>{
     dispatch (GetPopularPosts())
     dispatch (GetAllPosts())
-  })
+  },[dispatch])
 
   const [searchText, setSearchText] = React.useState("")
   const hadleSearch = (text)=>{
