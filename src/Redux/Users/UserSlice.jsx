@@ -53,13 +53,14 @@ export const updateUserAsyc = createAsyncThunk(
   async (data) => {
     const res = await axios.post(
       `${process.env.REACT_APP_REQUEST_DOMAIN}users/update/` + data.id,
-      data,
+      data.data,
       {
         headers: {
           Authorization: `token ${localStorage.getItem("token")}`,
         },
       }
     );
+    console.logo(data)
     return res.data;
   }
 );
@@ -124,6 +125,8 @@ export const userSlice = createSlice({
       localStorage.setItem("logined", true);
       localStorage.setItem("loggineduserId", action.payload.ID);
       state.success = true;
+      localStorage.setItem("user-valid", action.payload.isValid)
+      console.log(action.payload)
     },
     [loginAsync.rejected]: (state, action) => {
       localStorage.setItem("token", action.payload.token);

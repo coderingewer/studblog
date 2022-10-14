@@ -27,7 +27,7 @@ function Profile() {
     dispatch(getUserByIdAsync(userId));
     dispatch(getUserPost(userId));
   }, [dispatch]);
-  console.log(logined)
+  console.log(user)
   return (
     <>
       <div className="profile">
@@ -50,6 +50,7 @@ function Profile() {
         <div id="profile-page">
           <div id="profile-details">
             <button onClick={() => siggnOut()} className="signout-btn" >Çıkış Yap</button>
+            <Link className="edit-profile-link" to={"/edituser/"+user.ID} >düzenle</Link>
             <img src={user.userImageUrl} alt="" />
             <h1 className="username">{user.name}</h1>
             <div className="profile-info">

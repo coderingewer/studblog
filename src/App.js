@@ -17,6 +17,7 @@ import { useSelector } from 'react-redux';
 import UploadImage from './Media/UploadImage';
 import GetPostsByCategory from './Post/GetPostsByCategory';
 import BeBlogger from './Post/BeBlogger';
+import EditUser from './User/EditUser';
 
 function App() {
   const success = useSelector(state => state.users.user);
@@ -40,6 +41,7 @@ function App() {
           <Route path='/updateimage/:imageId' element={<UploadImage />} />
           <Route path='/posts/:category' element={<GetPostsByCategory />} />
           <Route path='/be-blogger' element={<BeBlogger />} />
+          <Route path='/edituser/:userId' element={<EditUser />} />
         </Routes>
       </Router>
     </header>

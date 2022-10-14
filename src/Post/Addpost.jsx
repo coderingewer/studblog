@@ -10,6 +10,7 @@ import { Navigate } from "react-router";
 function PostEditor() {
   const dispatch = useDispatch();
   const user = useSelector(state=>state.users.user)
+  const valid = user.isValid  ? user.isValid : localStorage.getItem("user-valid")
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
     useFormik({
       initialValues: {
@@ -24,42 +25,43 @@ function PostEditor() {
             content: editorRef.current.getContent(),
             category: values.category,
           })
-        );
-      },
-    });
-  const uploadFile = async (cb, file) => {
-    const formData = new FormData();
-    formData.append("file", file);
-    const res = await axios.post(
-      `${process.env.REACT_APP_REQUEST_DOMAIN}images/upload`,
-      formData
-    );
-    cb(res.data.url);
-    console.log(res.data.url);
-    console.log(formData);
-  };
-  const editorRef = useRef(null);
-  const imageHandler = (cb, a, b) => {
-    const input = document.createElement("input");
-    input.setAttribute("type", "file");
-    input.setAttribute("accept", "image/*");
-    input.click();
-    input.onchange = async () => {
-      const file = input.files[0];
-      await uploadFile(cb, file);
-      console.warn("You could only upload images.");
-    };
-  };
-  const categories = [
-    "",
-    "Bilim",
-    "Sanat",
+          );
+        },
+      });
+      const uploadFile = async (cb, file) => {
+        const formData = new FormData();
+        formData.append("file", file);
+        const res = await axios.post(
+          `${process.env.REACT_APP_REQUEST_DOMAIN}images/upload`,
+          formData
+          );
+          cb(res.data.url);
+          console.log(res.data.url);
+          console.log(formData);
+        };
+        const editorRef = useRef(null);
+        const imageHandler = (cb, a, b) => {
+          const input = document.createElement("input");
+          input.setAttribute("type", "file");
+          input.setAttribute("accept", "image/*");
+          input.click();
+          input.onchange = async () => {
+            const file = input.files[0];
+            await uploadFile(cb, file);
+            console.warn("You could only upload images.");
+          };
+        };
+        const categories = [
+          "",
+          "Teknoloji",
+          "Bilim",
+          "Sanat",
     "Eğitim",
     "Tanıtım",
-    "Teknoloji",
-    "Edebiyat",
     "Diğer",
   ];
+  console.log(user)
+  console.log(valid)
   return (
     <div id="addpost">
       <form id="editor-form" onSubmit={handleSubmit}>
@@ -116,7 +118,7 @@ function PostEditor() {
           Sonraki
         </button>
       </form>
-      {!user.isValid && <Navigate to = "/be-blogger"/> }
+      {!valid && <Navigate to = "/be-blogger"/> }
     </div>
   );
 }
