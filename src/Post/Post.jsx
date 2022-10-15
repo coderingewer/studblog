@@ -4,11 +4,11 @@ import trashicon from "../icons/trash2.svg";
 import { Link, useParams } from "react-router-dom";
 import PopularPosts from "../Home/PopularPosts";
 import { useDispatch, useSelector } from "react-redux";
-import { GetPostByIdAsync } from "../Redux/Posts/PostSlice";
+import { deletePost, GetPostByIdAsync } from "../Redux/Posts/PostSlice";
 import ShareCard from "./ShareCard";
 import { AiOutlineEdit, AiOutlineShareAlt } from "react-icons/ai";
 import { RiCloseLine } from "react-icons/ri";
-import {FiEye, FiMoreVertical} from "react-icons/fi"
+import { FiEye, FiMoreVertical } from "react-icons/fi"
 
 function Post() {
   const dispatch = useDispatch();
@@ -25,6 +25,10 @@ function Post() {
     document.getElementById(id).style.display = "none";
     setStatus(false);
   };
+
+  const handleDelete = async (id) => {
+    await dispatch(deletePost(id))
+  }
 
   useMemo(() => {
     dispatch(GetPostByIdAsync(postId));
@@ -49,13 +53,13 @@ function Post() {
                   <RiCloseLine />
                 </div>
 
-                <div className="icon trash-icon ">
+                <div onClick={() => handleDelete(post.ID)} className="icon trash-icon ">
                   <img src={trashicon} alt="" />
                 </div>
-                <Link to={"/updatepost/"+post.ID}>
-                <div className="icon edit-icon ">
-                  <AiOutlineEdit />
-                </div>
+                <Link to={"/updatepost/" + post.ID}>
+                  <div className="icon edit-icon ">
+                    <AiOutlineEdit />
+                  </div>
                 </Link>
 
                 <div
@@ -67,7 +71,7 @@ function Post() {
                   id="share-icon"
                   className="icon"
                 >
-                  <AiOutlineShareAlt/>
+                  <AiOutlineShareAlt />
                 </div>
                 <div
                   className="more-card-item-card"
@@ -98,13 +102,18 @@ function Post() {
               </div>
             </div>
           </div>
-          <div id="post-img">
-            <img src={post.image} />
+          <div className="post-body" >
+            <div id="post-img">
+              <img src={post.image} />
+            </div>
+            <div className="post-title" >
+              <p>{post.title}</p>
+            </div>
+            <div
+              dangerouslySetInnerHTML={{ __html: post.content }}
+              id="post-content"
+            />
           </div>
-          <div
-            dangerouslySetInnerHTML={{ __html: post.content }}
-            id="post-content"
-          />
         </div>
       </div>
       <PopularPosts />

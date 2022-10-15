@@ -82,6 +82,21 @@ export const updatePost = createAsyncThunk(
   }
 );
 
+export const deletePost = createAsyncThunk(
+  "posts/deleteP0st",
+  async (id) => {
+    const res = await axios.delete(
+      `${process.env.REACT_APP_REQUEST_DOMAIN}posts/delete/` + id,
+      {
+        headers: {
+          Authorization: `token ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+    return res.data;
+  }
+);
+
 const PostSlice = createSlice({
   name: "posts",
   initialState: {
@@ -93,8 +108,10 @@ const PostSlice = createSlice({
     populars: [],
     notfound: false,
     filtered: [],
+    posted:false,
     searching: false,
-    currentcategory: ""
+    currentcategory: "",
+    imageId:0,
   },
   reducers: {
     searchPosts: (state, action) => {
@@ -132,6 +149,11 @@ const PostSlice = createSlice({
       state.currentcategory = action.meta.arg
     },
     [UpdatePost.fulfilled]: (state, action) => {
+      console.log(action.payload)
+    },
+    [addPostsAsync.fulfilled]: (state, action) => {
+      state.posted = true;
+      state.imageId = action.payload.imageId;
       console.log(action.payload)
     }
   },

@@ -27,7 +27,6 @@ function Profile() {
     dispatch(getUserByIdAsync(userId));
     dispatch(getUserPost(userId));
   }, [dispatch]);
-  console.log(user)
   return (
     <>
       <div className="profile">

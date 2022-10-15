@@ -16,7 +16,7 @@ export const updateImageAsync = createAsyncThunk(
   "images/updateImageAsync/",
   async (data) => {
     const res = await axios.post(
-      `${process.env.REACT_APP_REQUEST_DOMAIN}medias/update/` + data.id,
+      `${process.env.REACT_APP_REQUEST_DOMAIN}images/update/` + data.id,
       data.data
     );
     return res.data;

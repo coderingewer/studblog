@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import { updateImageAsync } from "../Redux/Media/MediaSlice";
 import "./Media.css";
 
@@ -44,6 +46,7 @@ function UpdateImage() {
         <button className="file-btn" onClick={uploadFile}>
           Yükle
         </button>
+        <Link className="link cancel" to="/">İptal</Link>
       </div>
     </div>
   );

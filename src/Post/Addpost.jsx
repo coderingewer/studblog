@@ -9,8 +9,10 @@ import { Navigate } from "react-router";
 
 function PostEditor() {
   const dispatch = useDispatch();
-  const user = useSelector(state=>state.users.user)
-  const valid = user.isValid  ? user.isValid : localStorage.getItem("user-valid")
+  const user = useSelector(state => state.users.user)
+  const imageId = useSelector(state => state.posts.imageId)
+  const posted = useSelector(state => state.posts.posted)
+  const valid = user.isValid ? user.isValid : localStorage.getItem("user-valid")
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
     useFormik({
       initialValues: {
@@ -18,42 +20,42 @@ function PostEditor() {
         content: "",
         category: "",
       },
-      onSubmit: async  () => {
+      onSubmit: async () => {
         await dispatch(
           addPostsAsync({
             title: values.title,
             content: editorRef.current.getContent(),
             category: values.category,
           })
-          );
-        },
-      });
-      const uploadFile = async (cb, file) => {
-        const formData = new FormData();
-        formData.append("file", file);
-        const res = await axios.post(
-          `${process.env.REACT_APP_REQUEST_DOMAIN}images/upload`,
-          formData
-          );
-          cb(res.data.url);
-        };
-        const editorRef = useRef(null);
-        const imageHandler = (cb, a, b) => {
-          const input = document.createElement("input");
-          input.setAttribute("type", "file");
-          input.setAttribute("accept", "image/*");
-          input.click();
-          input.onchange = async () => {
-            const file = input.files[0];
-            await uploadFile(cb, file);
-            console.warn("You could only upload images.");
-          };
-        };
-        const categories = [
-          "",
-          "Teknoloji",
-          "Bilim",
-          "Sanat",
+        );
+      },
+    });
+  const uploadFile = async (cb, file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    const res = await axios.post(
+      `${process.env.REACT_APP_REQUEST_DOMAIN}images/upload`,
+      formData
+    );
+    cb(res.data.url);
+  };
+  const editorRef = useRef(null);
+  const imageHandler = (cb, a, b) => {
+    const input = document.createElement("input");
+    input.setAttribute("type", "file");
+    input.setAttribute("accept", "image/*");
+    input.click();
+    input.onchange = async () => {
+      const file = input.files[0];
+      await uploadFile(cb, file);
+      console.warn("You could only upload images.");
+    };
+  };
+  const categories = [
+    "",
+    "Teknoloji",
+    "Bilim",
+    "Sanat",
     "Eğitim",
     "Tanıtım",
     "Diğer",
@@ -114,7 +116,8 @@ function PostEditor() {
           Sonraki
         </button>
       </form>
-      {!valid && <Navigate to = "/be-blogger"/> }
+      {posted && <Navigate to={"/coverimage/" + imageId} />}
+      {!valid && <Navigate to="/be-blogger" />}
     </div>
   );
 }

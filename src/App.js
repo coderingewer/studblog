@@ -19,6 +19,8 @@ import GetPostsByCategory from './Post/GetPostsByCategory';
 import BeBlogger from './Post/BeBlogger';
 import EditUser from './User/EditUser';
 import UpdatePost from './Post/UpdatePost';
+import AddCoverImage from './Post/AddCoverImage';
+import UpdateImage from './Media/UpdateImage';
 
 function App() {
   const success = useSelector(state => state.users.user);
@@ -39,7 +41,8 @@ function App() {
           <Route path='/register/' element={<Register/>} />
           <Route path='/explore' element={<Explore />} />
           <Route path='/uploadimage' element={<UploadImage />} />
-          <Route path='/updateimage/:imageId' element={<UploadImage />} />
+          <Route path='/updateimage/:imageId' element={<UpdateImage />} />
+          <Route path='/coverimage/:imageId' element={<AddCoverImage />} />
           <Route path='/posts/:category' element={<GetPostsByCategory />} />
           <Route path='/be-blogger' element={<BeBlogger />} />
           <Route path='/edituser/:userId' element={<EditUser />} />
