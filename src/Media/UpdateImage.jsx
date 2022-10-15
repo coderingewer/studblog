@@ -46,7 +46,7 @@ function UpdateImage() {
         <button className="file-btn" onClick={uploadFile}>
           Yükle
         </button>
-        <a className="link cancel" href="/">İptal</a>
+        <Link className="link cancel" to={-1}>İptal</Link>
       </div>
     </div>
   );

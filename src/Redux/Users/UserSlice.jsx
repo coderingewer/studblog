@@ -7,11 +7,6 @@ export const loginAsync = createAsyncThunk(
     const res = await axios.post(
       `${process.env.REACT_APP_REQUEST_DOMAIN}users/login`,
       data,
-      {
-        headers: {
-          Authorization: `bearer a7041815-f5f7-49e3-9820-bf0340b4d991`,
-        },
-      }
     );
     return res.data;
   }
@@ -100,25 +95,27 @@ export const userSlice = createSlice({
   name: "users",
   initialState: {
     success: false,
-    signout:false,
-    registered:false,
+    signout: false,
+    registered: false,
+    loading: false,
     user: {},
-    profilephotolink: "",
+    message: "",
     logineduserId: localStorage.getItem("loggineduserId"),
   },
   reducers: {
     signOut: (state) => {
-      state.user={}
+      state.user = {}
       state.success = false;
       state.signout = true;
       localStorage.removeItem("token");
       localStorage.removeItem("logined");
+      localStorage.removeItem("user-valid");
       localStorage.removeItem("loggineduserId");
     },
   },
   extraReducers: {
     [loginAsync.pending]: (state, action) => {
-      console.log("User already pending");
+      state.loading = true;
     },
     [loginAsync.fulfilled]: (state, action) => {
       localStorage.setItem("token", action.payload.token);
@@ -126,18 +123,31 @@ export const userSlice = createSlice({
       localStorage.setItem("loggineduserId", action.payload.ID);
       state.success = true;
       localStorage.setItem("user-valid", action.payload.isValid)
-      console.log(action.payload)
+      console.log(action)
+      state.loading = false;
     },
     [loginAsync.rejected]: (state, action) => {
-      localStorage.setItem("token", action.payload.token);
-      localStorage.setItem("logined", false);
+      state.message = "Şifre veya E posta hatalı"
+      state.loading = false;
     },
+
     [getUserByIdAsync.fulfilled]: (state, action) => {
       state.user = action.payload;
     },
+
     [registerAsync.fulfilled]: (state, action) => {
       state.registered = true;
+      state.loading = false;
+      console.log(action)
+    },
+    [registerAsync.pending]: (state, action) => {
+      state.loading = true;
+    },
+    [registerAsync.rejected]: (state, action) => {
+      state.message = "Kayıt başarısız bilgilerinizi kontrol ederek tekrar deneyin"
+      state.loading = false;
     }
+
   },
 });
 export const { signOut } = userSlice.actions;

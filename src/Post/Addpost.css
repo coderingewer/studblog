@@ -8,12 +8,12 @@
     overflow: scroll;
   }
   #editor-form {
-    width: 100%;
+    width: 90%;
     padding-bottom: 100px;
   }
 
   .form-input {
-    min-width: 250px;
+   width: 100%;
   }
 
   #editor-form-btn {
@@ -109,5 +109,8 @@
 
 .update-post-img{
   width: 100%;
-  padding-bottom: 100px;
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
 }

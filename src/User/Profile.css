@@ -71,6 +71,10 @@
     margin-right: 40px;
     font-size: 14px;
   }
+  .edit-pp-icon{
+    left: 30px;
+
+  }
 }
 
 #profile-posts {
@@ -184,6 +188,11 @@
   .profilepage-btns {
     display: none;
   }
+  .edit-pp-icon{
+    left: 120px;
+
+  }
+  
 }
 
 .profile-nav {

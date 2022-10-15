@@ -62,6 +62,9 @@ function UpdatePost() {
     ];
     return (
         <div id="addpost">
+            <div className='update-post-img'>
+                <Link className='link' to={"/coverimage/" + post.imageId}>Gönderi Kapak Resmini Değiştir</Link>
+            </div>
             <form id="editor-form" onSubmit={handleSubmit}>
                 <label>Başlık*</label>
                 <input
@@ -117,9 +120,6 @@ function UpdatePost() {
                     Kaydet
                 </button>
             </form>
-            <div className='update-post-img'>
-                <Link to = {"/coverimage/"+ post.ID}>Gönderi Kapak Resmini Değiştir</Link>
-            </div>
         </div>
     )
 }

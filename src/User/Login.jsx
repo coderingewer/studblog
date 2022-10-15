@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router";
 import { loginAsync, userStates } from "../Redux/Users/UserSlice";
 import "./UserInfoForm.css";
+import validationSchema from "./Validation";
 
 function Login() {
   const success = localStorage.getItem("logined")
   const user = useSelector((state) => state.users.logineduser);
+  const message = useSelector((state) => state.users.message);
   const dispatch = useDispatch();
 
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
@@ -18,16 +20,23 @@ function Login() {
       },
       onSubmit: async (values, { resetForm }) => {
         await dispatch(
-          loginAsync({ email: values.email, password: values.password })
+          loginAsync({
+            email: values.email,
+            password: values.password
+          })
         );
         resetForm();
       },
+      validationSchema,
     });
+  console.log(message)
   return (
     <div className="formdiv">
       <div id="user-info-form">
+        <p className="error-message">{message}</p>
         <h1>Giriş Yap</h1>
         <form id="login-form" className="form" onSubmit={handleSubmit}>
+          <label>E Posta<div className="error-message" >{errors.email && touched.email && (errors.email)}</div> </label>
           <input
             className="form-items"
             type="email"
@@ -37,6 +46,7 @@ function Login() {
             onChange={handleChange}
             onBlur={handleBlur}
           />
+                    <label>Şifre<div className="error-message" >{errors.password && touched.password && (errors.password)}</div> </label>
           <input
             className="form-items"
             type="password"
