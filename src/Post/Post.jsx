@@ -91,7 +91,7 @@ function Post() {
                     <RiCloseLine />
                   </div>
                   <ShareCard
-                    url={"https://studblog-demo-2.netlify.app/post/" + post.ID}
+                    url={"https://www.studappblog.com/post/" + post.ID}
                     postId={post.ID}
                   />
                 </div>
