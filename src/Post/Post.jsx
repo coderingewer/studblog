@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import "./Post.css";
 import trashicon from "../icons/trash2.svg";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import PopularPosts from "../Home/PopularPosts";
 import { useDispatch, useSelector } from "react-redux";
 import { deletePost, GetPostByIdAsync } from "../Redux/Posts/PostSlice";
@@ -13,6 +13,7 @@ import { FiEye, FiMoreVertical } from "react-icons/fi"
 function Post() {
   const dispatch = useDispatch();
   const post = useSelector((state) => state.posts.item);
+  const deleted = useSelector((state) => state.posts.deleted);
   const { postId } = useParams();
   const [status, setStatus] = useState(false);
   const userId = parseInt(localStorage.getItem("loggineduserId"))
@@ -123,6 +124,7 @@ function Post() {
         </div>
       </div>
       <PopularPosts />
+      {deleted &&<Navigate to= {-1}/>}
     </>
   );
 }

@@ -12,7 +12,7 @@ function AddCoverImage() {
     <div className='add-coverimg' >
         <p>Gönderi Kapak Resmi</p>
         <UpdateImage/>
-       { uploaded === true  && <Navigate to="/" replace={true}/>}
+       { uploaded === true  && <Navigate to="/" />}
     </div>
   )
 }

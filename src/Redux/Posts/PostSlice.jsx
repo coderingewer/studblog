@@ -112,6 +112,7 @@ const PostSlice = createSlice({
     searching: false,
     currentcategory: "",
     imageId:0,
+    deleted:false
   },
   reducers: {
     searchPosts: (state, action) => {
@@ -155,6 +156,9 @@ const PostSlice = createSlice({
       state.posted = true;
       state.imageId = action.payload.imageId;
       console.log(action.payload)
+    },
+    [deletePost.fulfilled]:(state, action)=>{
+      state.deleted = true
     }
   },
 });

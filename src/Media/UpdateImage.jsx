@@ -24,7 +24,6 @@ function UpdateImage() {
     formData.append("file", file);
     formData.append("fileName", fileName);
     await dispact(updateImageAsync({ data: formData, id: imageId }));
-    setFileName("")
   };
   return (
     <div className="media-form">
@@ -57,7 +56,6 @@ function UpdateImage() {
           aria-disabled={loading ? true : false}
           className="link cancel"
           to={-1}>İptal</Link>
-          {success && <Navigate to = {-1}/>}
       </div>
     </div>
   );
