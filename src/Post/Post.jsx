@@ -44,7 +44,7 @@ function Post() {
         <div id="post">
           <div id="postinfo">
             <div id="cardbuttons" className="post-btns">
-              <Link className="link" to={"/profile/" + post.senderId}>
+              <Link className="link" to={"/user/" + post.senderId}>
                 <div id="postpp">
                   <img src={post.senderImageUrl} alt="" />
                   <h1>{post.senderName}</h1>
