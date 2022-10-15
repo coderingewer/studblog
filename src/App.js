@@ -18,6 +18,7 @@ import UploadImage from './Media/UploadImage';
 import GetPostsByCategory from './Post/GetPostsByCategory';
 import BeBlogger from './Post/BeBlogger';
 import EditUser from './User/EditUser';
+import UpdatePost from './Post/UpdatePost';
 
 function App() {
   const success = useSelector(state => state.users.user);
@@ -42,6 +43,7 @@ function App() {
           <Route path='/posts/:category' element={<GetPostsByCategory />} />
           <Route path='/be-blogger' element={<BeBlogger />} />
           <Route path='/edituser/:userId' element={<EditUser />} />
+          <Route path='/updatepost/:postId' element={<UpdatePost />} />
         </Routes>
       </Router>
     </header>

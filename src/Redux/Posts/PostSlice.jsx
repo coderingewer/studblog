@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { json } from "react-router";
+import UpdatePost from "../../Post/UpdatePost";
 
 export const GetAllPosts = createAsyncThunk("posts/getAll", async () => {
   const res = await axios.get(
@@ -23,7 +24,7 @@ export const GetByCategory = createAsyncThunk(
   "posts/getByCategory",
   async (category) => {
     const res = await axios.get(
-      `${process.env.REACT_APP_REQUEST_DOMAIN}posts/getByCategory/`+ category
+      `${process.env.REACT_APP_REQUEST_DOMAIN}posts/getByCategory/` + category
     );
     return res.data;
   }
@@ -64,19 +65,36 @@ export const addPostsAsync = createAsyncThunk(
   }
 );
 
+export const updatePost = createAsyncThunk(
+  "posts/updatePost",
+  async (data) => {
+    const res = await axios.post(
+      `${process.env.REACT_APP_REQUEST_DOMAIN}posts/update/` + data.id,
+      data,
+      {
+        headers: {
+          Authorization: `token ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+    console.log(data);
+    return res.data;
+  }
+);
+
 const PostSlice = createSlice({
   name: "posts",
   initialState: {
     items: [],
     userposts: [],
-    category:[],
+    category: [],
     item: {},
     image: {},
     populars: [],
     notfound: false,
     filtered: [],
     searching: false,
-    currentcategory :""
+    currentcategory: ""
   },
   reducers: {
     searchPosts: (state, action) => {
@@ -112,6 +130,9 @@ const PostSlice = createSlice({
     [GetByCategory.fulfilled]: (state, action) => {
       state.category = action.payload
       state.currentcategory = action.meta.arg
+    },
+    [UpdatePost.fulfilled]: (state, action) => {
+      console.log(action.payload)
     }
   },
 });

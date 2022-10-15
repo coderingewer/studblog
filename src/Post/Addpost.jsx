@@ -18,8 +18,8 @@ function PostEditor() {
         content: "",
         category: "",
       },
-      onSubmit: () => {
-        dispatch(
+      onSubmit: async  () => {
+        await dispatch(
           addPostsAsync({
             title: values.title,
             content: editorRef.current.getContent(),
@@ -36,8 +36,6 @@ function PostEditor() {
           formData
           );
           cb(res.data.url);
-          console.log(res.data.url);
-          console.log(formData);
         };
         const editorRef = useRef(null);
         const imageHandler = (cb, a, b) => {
@@ -60,8 +58,6 @@ function PostEditor() {
     "Tanıtım",
     "Diğer",
   ];
-  console.log(user)
-  console.log(valid)
   return (
     <div id="addpost">
       <form id="editor-form" onSubmit={handleSubmit}>

@@ -227,11 +227,10 @@
   padding: 5px;
   right: 20px;
   top: 10px;
-  color: rgba(255, 0, 0, 0.527);
+  color: rgba(255, 0, 0, 0.603);
   font-size: 14px;
   font-weight: 700;
   border-radius: 10px;
-  box-shadow: 0px 0px 6px rgba(255, 0, 0, 0.5);
 background-color: rgb(255, 255, 255);
 }
 
@@ -241,10 +240,9 @@ background-color: rgb(255, 255, 255);
   right: 20px;
   background-color:white;
   top :50px;
-  text-decoration: none;
+  text-decoration:  none;
   border-radius: 10px;
-  color: black;
-  box-shadow: 0px 0px 6px rgba(5, 245, 5, 0.397);
+  color: rgba(0, 78, 35, 0.753);
 
 
 }

@@ -52,9 +52,11 @@ function Post() {
                 <div className="icon trash-icon ">
                   <img src={trashicon} alt="" />
                 </div>
+                <Link to={"/updatepost/"+post.ID}>
                 <div className="icon edit-icon ">
                   <AiOutlineEdit />
                 </div>
+                </Link>
 
                 <div
                   onClick={
