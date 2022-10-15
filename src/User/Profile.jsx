@@ -41,7 +41,7 @@ function Profile() {
           <div id={active === "user-favorites-lists" ? "disabled" : ""} >
             {userPosts.map((post) => (
               <div key={post.ID}>
-                <NoPhotoPostCard content={post.title} userpp={user.userImageUrl} />
+                <NoPhotoPostCard content={post.title} postId ={post.ID} userpp={user.userImageUrl} />
               </div>
             ))}
           </div>

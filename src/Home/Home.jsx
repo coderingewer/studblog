@@ -25,6 +25,7 @@ function Home() {
                 authorpp={post.sender.user_image.url}
                 imgurl={post.image.url}
                 authorname={post.sender.name}
+                authorId={post.sender.ID}
                 postId={post.ID}
               />
             </div>
