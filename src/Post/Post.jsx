@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "./Post.css";
 import trashicon from "../icons/trash2.svg";
 import { Link, useParams } from "react-router-dom";
@@ -30,9 +30,10 @@ function Post() {
     await dispatch(deletePost(id))
   }
 
-  useMemo(() => {
+  useEffect(() => {
     dispatch(GetPostByIdAsync(postId));
   }, [dispatch]);
+  document.title = post.title
   console.log(post)
   console.log(userId)
   return (

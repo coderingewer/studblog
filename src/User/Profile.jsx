@@ -24,6 +24,7 @@ function Profile() {
   }
 
   useEffect(() => {
+    document.title = user.name
     dispatch(getUserByIdAsync(userId));
     dispatch(getUserPost(userId));
   }, [dispatch]);
@@ -51,7 +52,8 @@ function Profile() {
             <button onClick={() => siggnOut()} className="signout-btn" >Çıkış Yap</button>
             <Link className="edit-profile-link" to={"/edituser/"+user.ID} >düzenle</Link>
             <img src={user.userImageUrl} alt="" />
-            <h1 className="username">{user.name}</h1>
+            <h1 className="name">{user.name}</h1>
+            <h1 className="username">@{user.username}</h1>
             <div className="profile-info">
               <h1>{user.user_role}</h1>
               <h1>{userPosts.length} Gönderi</h1>
