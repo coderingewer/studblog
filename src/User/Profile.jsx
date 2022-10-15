@@ -24,7 +24,7 @@ function Profile() {
   }
 
   useEffect(() => {
-    document.title = user.name
+    document.title = "Studblog | " + user.name
     dispatch(getUserByIdAsync(userId));
     dispatch(getUserPost(userId));
   }, [dispatch]);

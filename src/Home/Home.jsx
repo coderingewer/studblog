@@ -13,7 +13,7 @@ function Home() {
   useEffect(() => {
     dispatch(GetAllPosts());
   }, [dispatch]);
-  console.log(posts);
+  document.title = "Studblog | Ana Sayfa"
   return (
     <>
       <div id="home-page">

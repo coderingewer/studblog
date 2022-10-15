@@ -33,7 +33,7 @@ function Post() {
   useEffect(() => {
     dispatch(GetPostByIdAsync(postId));
   }, [dispatch]);
-  document.title = post.title
+  document.title = "Studblog | " +  post.title
   console.log(post)
   console.log(userId)
   return (

@@ -60,6 +60,7 @@ function PostEditor() {
     "Tanıtım",
     "Diğer",
   ];
+  document.title = "Studblog | Gönderi oluştur"
   return (
     <div id="addpost">
       <form id="editor-form" onSubmit={handleSubmit}>

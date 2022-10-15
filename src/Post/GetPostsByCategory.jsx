@@ -11,6 +11,7 @@ function GetPostsByCategory() {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(GetByCategory(category))
+        document.title = "Studblog | " + category
     }, [dispatch])
     console.log(category)
     return (

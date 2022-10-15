@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useMemo } from "react";
 import "./ShareCard.css";
 import icon from "../icons/Share.svg"
 import { AiFillTwitterCircle, AiOutlineLink } from "react-icons/ai";
