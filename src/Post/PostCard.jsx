@@ -56,7 +56,7 @@ function PostCard(props) {
           X
         </div>
         <ShareCard
-          url={"https://studblog-demo-2.netlify.app/post/" + props.postId}
+          url={"https://www.studappblog.com/post/" + props.postId}
           postId={props.postId}
         />
       </div>
