@@ -24,6 +24,7 @@ function Register() {
         password: "",
         passwordConfirm: ""
       },
+      validationSchema,
       onSubmit: async (values, { resetForm }) => {
         await dispatch(registerAsync({
           email: values.email,
@@ -32,9 +33,7 @@ function Register() {
           password: values.password
         },
         ));
-        console.log("Success  already registered");
       },
-      validationSchema,
     });
   return (
     <div className="formdiv">
@@ -42,7 +41,7 @@ function Register() {
         <p className="error-message">{message}</p>
         <h1>Kayıt Ol</h1>
         <form id="login-form" className="form" onSubmit={handleSubmit}>
-        <label>İsim<div className="error-message" >{errors.name && touched.name && (errors.name)}</div> </label>
+          <label>İsim<div className="error-message" >{errors.name && touched.name && (errors.name)}</div> </label>
           <input
             className="form-items"
             type="text"
@@ -89,12 +88,12 @@ function Register() {
             className="form-items"
             type="password"
             name="passwordConfirm"
-            placeholder= "Şifre Tekrarı"
+            placeholder="Şifre Tekrarı"
             value={values.passwordConfirm}
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          <button disabled ={errors ? true: false} className="form-items" type="submit">
+          <button className="form-items" type="submit">
             Kayıt Ol
           </button>
         </form>

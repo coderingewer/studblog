@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useParams } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { updateImageAsync } from "../Redux/Media/MediaSlice";
 import "./Media.css";
 
 function UpdateImage() {
   const dispact = useDispatch();
-  const {imageId} = useParams()
+  const { imageId } = useParams()
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState("");
+  const success = useSelector(state=>state.medias.success)
+  const loading = useSelector(state => state.medias.loading)
+
+
   const saveFile = (e) => {
     setFile(e.target.files[0]);
     setFileName(e.target.files[0].name);
@@ -19,8 +23,8 @@ function UpdateImage() {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("fileName", fileName);
-    await dispact(updateImageAsync({data:formData, id:imageId}));
-    console.log(formData);
+    await dispact(updateImageAsync({ data: formData, id: imageId }));
+    setFileName("")
   };
   return (
     <div className="media-form">
@@ -30,23 +34,30 @@ function UpdateImage() {
         </div>
         <div>
           <input
+            disabled={loading ? true : false}
             id="file-input"
             type="file"
             accept=".jpg, .png, .jpeg, .gif,"
             onChange={saveFile}
           />
           <button
+            disabled={loading ? true : false}
             className="file-btn"
             onClick={() => document.getElementById("file-input").click()}
           >
             Fotoğraf Seç
           </button>
         </div>
-        <div></div>
-        <button className="file-btn" onClick={uploadFile}>
+        <button
+          disabled={loading ? true : false}
+          className="file-btn" onClick={uploadFile}>
           Yükle
         </button>
-        <Link className="link cancel" to={-1}>İptal</Link>
+        <Link
+          aria-disabled={loading ? true : false}
+          className="link cancel"
+          to={-1}>İptal</Link>
+          {success && <Navigate to = {-1}/>}
       </div>
     </div>
   );

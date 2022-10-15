@@ -8,50 +8,61 @@ export const uploadImageAsync = createAsyncThunk(
   async (data) => {
     const res = await axios.post(
       `${process.env.REACT_APP_REQUEST_DOMAIN}images/upload`,
-      data
-      );
+      data,
+      {
+        headers: {
+          Authorization: `token ${localStorage.getItem("token")}`,
+        },
+      }
+    );
     return res.data;
   }
-  );
-  
-  export const updateImageAsync = createAsyncThunk(
-    "medias/updateImageAsync/",
-    async (data) => {
-      const res = await axios.post(
-        `${process.env.REACT_APP_REQUEST_DOMAIN}images/update/` + data.id,
-      data.data
-      );
-      return res.data;
-    }
+);
+
+export const updateImageAsync = createAsyncThunk(
+  "medias/updateImageAsync/",
+  async (data) => {
+    const res = await axios.post(
+      `${process.env.REACT_APP_REQUEST_DOMAIN}images/update/` + data.id,
+      data.data,
+      {
+        headers: {
+          Authorization: `token ${localStorage.getItem("token")}`,
+        },
+      }
     );
-    const MediaSlice = createSlice({
-      name: "medias",
-      initialState: {
-        uplaoded:false,
-      },
-      reducers: {},
-      extraReducers: {
+    return res.data;
+  }
+);
+const MediaSlice = createSlice({
+  name: "medias",
+  initialState: {
+    uplaoded: false,
+    loading: false,
+    success: false,
+  },
+  reducers: {},
+  extraReducers: {
     [uploadImageAsync.pending]: (state, action) => {
     },
-    
+
     [uploadImageAsync.fulfilled]: (state, action) => {
-      
+
     },
     [uploadImageAsync.rejected]: (state, action) => {
-      
+
     },
     [updateImageAsync.pending]: (state, action) => {
+      state.loading = true
     },
     [updateImageAsync.fulfilled]: (state, action) => {
       state.uplaoded = true;
-      console.log(action.payload)
-      setTimeout(() => {
-       state.uplaoded = false;
-        console.log("hi")
-      }, 1000);
+      state.loading = false
+      state.success = true
     },
     [updateImageAsync.rejected]: (state, action) => {
-      
+      state.loading = false
+      state.success = false
     },
   },
 });
