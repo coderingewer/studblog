@@ -1,5 +1,7 @@
 import React from 'react'
 import "./NoPhotoPostCard.css"
+import { Link } from "react-router-dom";
+
 
 function NoPhotoPostCard(props) {
   return (
@@ -8,7 +10,9 @@ function NoPhotoPostCard(props) {
             <img src={props.userpp}/>
         </div>
         <div className="no-img-postcard-content">
+        <Link className='link' to = {"/post/"+ props.postId}>  
         <p>{props.content}</p>
+        </Link>
         </div>
     </div>
   )

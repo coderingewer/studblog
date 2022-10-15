@@ -9,6 +9,7 @@ import ShareCard from "./ShareCard";
 import { AiOutlineEdit, AiOutlineShareAlt } from "react-icons/ai";
 import { RiCloseLine } from "react-icons/ri";
 import { FiEye, FiMoreVertical } from "react-icons/fi"
+import Bottombar from "../bars/Bottombar";
 
 function Post() {
   const dispatch = useDispatch();
@@ -123,6 +124,7 @@ function Post() {
           </div>
         </div>
       </div>
+      <Bottombar/>
       <PopularPosts />
       {deleted &&<Navigate to= {-1}/>}
     </>

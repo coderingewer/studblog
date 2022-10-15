@@ -28,6 +28,7 @@ function PopularPosts() {
             <NoPhotoPostCard
               userpp={post.senderImageUrl}
               content={post.title}
+              postId ={post.ID}
             />
           </div>
         ))}

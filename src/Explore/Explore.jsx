@@ -43,6 +43,7 @@ function Explore() {
                 authorpp={post.senderImageUrl}
                 imgurl={post.image}
                 authorname={post.senderName}
+                authorId={post.senderId}
                 postId={post.ID}
               />
             </div>

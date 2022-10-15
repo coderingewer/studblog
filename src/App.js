@@ -21,6 +21,7 @@ import EditUser from './User/EditUser';
 import UpdatePost from './Post/UpdatePost';
 import AddCoverImage from './Post/AddCoverImage';
 import UpdateImage from './Media/UpdateImage';
+import User from './User/User';
 
 function App() {
   const success = useSelector(state => state.users.user);
@@ -33,6 +34,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/profile/:userId' element={ <Profile />} />
+          <Route path='/user/:userId' element={ <User />} />
           <Route path='/loginrequest' element={ <UnLoginPage />} />
           <Route path='/lists' element={<ListCard />} />
           <Route path='/createpost/' element={<PostEditor />} />

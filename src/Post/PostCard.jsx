@@ -29,10 +29,12 @@ function PostCard(props) {
         </div>
       </div>
       <div id="cardbuttons" className="card-btns">
+          <Link className="link" to={"/user/" + props.authorId}>
         <div id="postpp">
-          <img src={props.authorpp} alt="" />
-          <h1>{props.authorname}</h1>
+            <img src={props.authorpp} alt="" />
+            <h1>{props.authorname}</h1>
         </div>
+          </Link>
         <div
           onClick={
             !status
@@ -42,7 +44,7 @@ function PostCard(props) {
           id="share-icon"
           className="icon"
         >
-          <AiOutlineShareAlt/>
+          <AiOutlineShareAlt />
         </div>
       </div>
       <div
