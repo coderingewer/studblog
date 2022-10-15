@@ -20,9 +20,9 @@ function ShareCard(props) {
         <h4>Paylaş</h4>
         </div>
         <div className="share-icons">
-      <a className="link"  target="_blank" href={"https://twitter.com/intent/tweet?url=" + props.url}><AiFillTwitterCircle className="icon"/></a>
+      <a className="link"  target="_blank" href={"https://twitter.com/intent/tweet?url=" + props.url}><AiFillTwitterCircle className="other-app-icon"/></a>
       <a  className="link"  target="_blank" href={"https://www.facebook.com/sharer/sharer.php?u=" + props.url}>
-       <BsFacebook className="icon"/>
+       <BsFacebook className="other-app-icon" />
       </a>
         </div>
       <div className="copy-text" >

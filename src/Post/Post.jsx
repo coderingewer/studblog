@@ -15,7 +15,7 @@ function Post() {
   const post = useSelector((state) => state.posts.item);
   const { postId } = useParams();
   const [status, setStatus] = useState(false);
-
+  const userId = parseInt(localStorage.getItem("loggineduserId"))
   const OpenCard = (id) => {
     document.getElementById(id).style.display = "block";
     setStatus(true);
@@ -33,6 +33,8 @@ function Post() {
   useMemo(() => {
     dispatch(GetPostByIdAsync(postId));
   }, [dispatch]);
+  console.log(post)
+  console.log(userId)
   return (
     <>
       <div>
@@ -52,16 +54,19 @@ function Post() {
                 >
                   <RiCloseLine />
                 </div>
-
-                <div onClick={() => handleDelete(post.ID)} className="icon trash-icon ">
-                  <img src={trashicon} alt="" />
-                </div>
-                <Link to={"/updatepost/" + post.ID}>
-                  <div className="icon edit-icon ">
-                    <AiOutlineEdit />
+                {
+                  userId === post.senderId &&
+                  <div>
+                    <div onClick={() => handleDelete(post.ID)} className="icon trash-icon ">
+                      <img src={trashicon} alt="" />
+                    </div>
+                    <Link to={"/updatepost/" + post.ID}>
+                      <div className="icon edit-icon ">
+                        <AiOutlineEdit />
+                      </div>
+                    </Link>
                   </div>
-                </Link>
-
+                }
                 <div
                   onClick={
                     !status
