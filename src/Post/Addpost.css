@@ -5,6 +5,7 @@
     margin-right: 5%;
     position: absolute;
     top: 100px;
+    overflow: scroll;
   }
   #editor-form {
     width: 100%;
@@ -26,15 +27,17 @@
   #addpost {
     width: 500px;
     position: relative;
+    overflow: scroll;
   }
 
   #editor-form {
+    width: 90%;
     margin: 10px;
     justify-content: center;
   }
 
   .form-input {
-    width: 500px;
+    width: 100%;
   }
 
   .form-input {
@@ -88,6 +91,7 @@
   margin: 10px;
   font-size: 20px;
   font-weight: 700;
+  display: flex;
 }
 
 .add-coverimg{
@@ -95,9 +99,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .add-coverimg p{
   font-size: 18px;
   font-weight: 700;
+}
+
+.update-post-img{
+  width: 100%;
+  padding-bottom: 100px;
 }

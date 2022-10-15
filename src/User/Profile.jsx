@@ -8,6 +8,7 @@ import "./Profile.css";
 import Bottombar from "../bars/Bottombar";
 import ListCard from "../Lists/ListCard";
 import { MdOutlineCreate } from "react-icons/md"
+import { RiImageEditLine } from "react-icons/ri";
 
 function Profile() {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ function Profile() {
     dispatch(getUserByIdAsync(userId));
     dispatch(getUserPost(userId));
   }, [dispatch]);
+  console.log(user)
   return (
     <>
       <div className="profile">
@@ -52,6 +54,9 @@ function Profile() {
             <button onClick={() => siggnOut()} className="signout-btn" >Çıkış Yap</button>
             <Link className="edit-profile-link" to={"/edituser/"+user.ID} >düzenle</Link>
             <img src={user.userImageUrl} alt="" />
+            <Link className="link" to={"/updateimage/"+user.userImageId}>
+            <div className="edit-pp-icon"><RiImageEditLine/></div>
+            </Link>
             <h1 className="name">{user.name}</h1>
             <h1 className="username">@{user.username}</h1>
             <div className="profile-info">

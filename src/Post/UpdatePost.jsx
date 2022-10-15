@@ -1,10 +1,13 @@
 import { Editor } from '@tinymce/tinymce-react';
 import axios from 'axios';
 import { useFormik } from 'formik';
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-import { updatePost } from '../Redux/Posts/PostSlice';
+import validationSchema from "./Validations";
+import { GetPostByIdAsync, updatePost } from '../Redux/Posts/PostSlice';
+import UpdateImage from '../Media/UpdateImage';
+import { Link } from 'react-router-dom';
 
 function UpdatePost() {
     const post = useSelector(state => state.posts.item)
@@ -111,9 +114,12 @@ function UpdatePost() {
                     }}
                 />
                 <button id="editor-form-btn" type="submit">
-                    Sonraki
+                    Kaydet
                 </button>
             </form>
+            <div className='update-post-img'>
+                <Link to = {"/coverimage/"+ post.ID}>Gönderi Kapak Resmini Değiştir</Link>
+            </div>
         </div>
     )
 }

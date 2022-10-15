@@ -150,7 +150,6 @@
   }
 
   #post-title p {
-    border-color: aqua;
     margin: 5px;
     text-align: left;
     font-weight: 600;
@@ -190,6 +189,7 @@
     position: absolute;
     font-weight: 500;
     font-size: 14px;
+    left: 10px;
     width: 140px;
   }
 

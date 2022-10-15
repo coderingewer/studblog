@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import React, { useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import "./Addpost.css";
+import validationSchema from "./Validations"
 import { useDispatch, useSelector } from "react-redux";
 import { addPostsAsync } from "../Redux/Posts/PostSlice";
 import { Navigate } from "react-router";
@@ -20,6 +21,7 @@ function PostEditor() {
         content: "",
         category: "",
       },
+      validationSchema,
       onSubmit: async () => {
         await dispatch(
           addPostsAsync({
@@ -28,7 +30,7 @@ function PostEditor() {
             category: values.category,
           })
         );
-      },
+      }
     });
   const uploadFile = async (cb, file) => {
     const formData = new FormData();
@@ -64,7 +66,7 @@ function PostEditor() {
   return (
     <div id="addpost">
       <form id="editor-form" onSubmit={handleSubmit}>
-        <label>Başlık*</label>
+        <label>Başlık  <div className="error-message" > {errors.title && touched.title && (errors.title)}</div></label>
         <input
           className="form-input"
           type="text"
@@ -74,14 +76,14 @@ function PostEditor() {
           onChange={handleChange}
           onBlur={handleBlur}
         />
-        <label>Kategori*</label>
+        <label>Kategori <div className="error-message" > {errors.category && touched.category && (errors.category)}</div></label>
         <select
           type="text"
           className="form-input"
           placeholder="Kategori"
           name="category"
           value={values.category}
-          onChange={handleChange}
+          onChange={handleChange} title
           onBlur={handleBlur}
         >
           {categories.map((category, i) => (
@@ -113,7 +115,7 @@ function PostEditor() {
               "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
           }}
         />
-        <button id="editor-form-btn" type="submit">
+        <button disabled={errors && values.title === "" && values.category === "" ? true : false} id="editor-form-btn" type="submit">
           Sonraki
         </button>
       </form>
