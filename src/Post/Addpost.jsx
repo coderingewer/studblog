@@ -62,6 +62,7 @@ function PostEditor() {
     "Tanıtım",
     "Diğer",
   ];
+  console.log(valid)
   document.title = "Studblog | Gönderi oluştur"
   return (
     <div id="addpost">
@@ -119,8 +120,8 @@ function PostEditor() {
           Sonraki
         </button>
       </form>
+      {valid !== true && <Navigate to="/be-blogger" />}
       {posted && <Navigate to={"/coverimage/" + imageId} />}
-      {!valid && <Navigate to="/be-blogger" />}
     </div>
   );
 }
