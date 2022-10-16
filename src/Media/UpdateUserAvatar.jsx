@@ -10,8 +10,9 @@ function UpdateUseAvatar() {
   const dispact = useDispatch();
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState("");
-  const success= useSelector(state=>state.medias.success)
-  const loading = useSelector(state => state.medias.loading)
+  const success = useSelector(state => state.users.success)
+  const userId = parseInt(localStorage.getItem("loggineduserId"))
+  const loading = useSelector(state => state.users.loading)
 
 
   const saveFile = (e) => {
@@ -25,6 +26,7 @@ function UpdateUseAvatar() {
     formData.append("fileName", fileName);
     await dispact(editUserAvatarAsync(formData));
   };
+  console.log(success)
   return (
     <div className="media-form">
       <div className="media-form-card" >
@@ -33,12 +35,14 @@ function UpdateUseAvatar() {
         </div>
         <div>
           <input
+            disabled={loading ? true : false}
             id="file-input"
             type="file"
             accept=".jpg, .png, .jpeg, .gif,"
             onChange={saveFile}
           />
           <button
+            disabled={loading ? true : false}
             className="file-btn"
             onClick={() => document.getElementById("file-input").click()}
           >
@@ -46,7 +50,7 @@ function UpdateUseAvatar() {
           </button>
         </div>
         <button
-        
+          disabled={loading ? true : false}
           className="file-btn" onClick={uploadFile}>
           Yükle
         </button>
@@ -54,6 +58,7 @@ function UpdateUseAvatar() {
           className="link cancel"
           to={-1}>İptal</Link>
       </div>
+      {success === true && <Navigate to={"/user/" + userId} replace={true} />}
     </div>
   );
 }

@@ -25,10 +25,12 @@ function Profile() {
     dispatch(signOut())
   }
 
-  useEffect(() => {
-    document.title = "Studblog | " + user.name
+  useEffect(  () => {
     dispatch(getUserByIdAsync(userId));
     dispatch(getUserPost(userId));
+    if(user.usernmae !==""){
+      document.title = "Studblog |  Profilim"
+    }
   }, [dispatch]);
   return (
     <>

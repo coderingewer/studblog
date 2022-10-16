@@ -135,6 +135,7 @@ export const userSlice = createSlice({
 
     [getUserByIdAsync.fulfilled]: (state, action) => {
       state.user = {};
+      state.success = false
       state.user = action.payload;
     },
 
@@ -149,7 +150,17 @@ export const userSlice = createSlice({
     [registerAsync.rejected]: (state, action) => {
       state.message = "Kayıt başarısız bilgilerinizi kontrol ederek tekrar deneyin"
       state.loading = false;
-    }
+    }, 
+    [editUserAvatarAsync.fulfilled]: (state, action) => {
+      state.success = true
+      state.loading = false;
+    },
+    [editUserAvatarAsync.pending]: (state, action) => {
+      state.loading = true;
+    },
+    [editUserAvatarAsync.rejected]: (state, action) => {
+      state.success = false;
+    },
 
   },
 });
