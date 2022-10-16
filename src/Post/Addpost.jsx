@@ -8,12 +8,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { addPostsAsync } from "../Redux/Posts/PostSlice";
 import { Navigate } from "react-router";
 import BeBlogger from "./BeBlogger.jsx"
+import UnLoginPage from "../User/UnLoginPage";
 
 function PostEditor() {
   const dispatch = useDispatch();
   const user = useSelector(state => state.users.user)
   const imageId = useSelector(state => state.posts.imageId)
   const posted = useSelector(state => state.posts.posted)
+  const logined = localStorage.getItem("logined");
+
   const valid = user.isValid ? user.isValid : localStorage.getItem("user-valid")
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
     useFormik({
@@ -123,7 +126,9 @@ function PostEditor() {
             </button>
           </form>
         </div>
-        : <BeBlogger />
+        : <>
+          {!logined ? <UnLoginPage /> : <BeBlogger />}
+        </>
       }
       {posted && <Navigate to={"/coverimage/" + imageId} />}
     </>

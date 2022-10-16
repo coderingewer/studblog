@@ -57,7 +57,7 @@ function Login() {
             Giriş Yap
           </button>
         </form>
-        {success && <Navigate to={"/profile/1"} />}
+        {success && <Navigate to={"/profile/1"} replace={true} />}
       </div>
     </div>
   );

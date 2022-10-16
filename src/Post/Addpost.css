@@ -21,6 +21,9 @@
     font-size: 16px;
     font-weight: 500;
   }
+  .be-blogger-page{
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 1001px) {
@@ -53,6 +56,10 @@
     margin: 5px;
     font-size: 20px;
     font-weight: 700;
+  }
+
+  .be-blogger-page{
+    width: 500px;
   }
 }
 
@@ -113,4 +120,30 @@
   margin-top: 50px;
   justify-content: center;
   align-items: center;
+}
+
+.be-blogger-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.be-blogger-page p{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.be-blogger-page a{
+  font-size: 18px;
+  font-weight: 700;
+  width: 100px;
+  text-align: center;
+}
+
+.be-blogger-page a:hover{
+  font-size: 20px;
+  font-weight: 800;
+  width: 150px;
+  border-bottom: solid 2px rgb(56, 172, 90);
 }
