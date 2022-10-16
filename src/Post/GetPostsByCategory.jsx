@@ -13,7 +13,6 @@ function GetPostsByCategory() {
         dispatch(GetByCategory(category))
         document.title = "Studblog | " + category
     }, [dispatch])
-    console.log(category)
     return (
         <>
             <div id='home-page' >
