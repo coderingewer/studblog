@@ -18,15 +18,17 @@ function FilteredPost() {
       <div
         onClick={() => CloseCard("filtered-posts-list")}
         className="icon filtered-posts-close "
-      >
+        >
         <RiCloseLine />
       </div>
+    <div id='filtered-posts-list' className='filtered-posts-list' >
       {posts.map((post) => (
         <div key={post.ID}>
           <NoPhotoPostCard userpp={post.sender.user_image.url} content={post.title} />
         </div>
       ))}
     </div>
+      </div>
   )
 }
 
