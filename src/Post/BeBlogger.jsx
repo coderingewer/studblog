@@ -3,7 +3,8 @@ import React from 'react'
 function BeBlogger() {
     return (
         <div id="addpost">
-            Yazar ol
+            Yazar ol,
+            Daha linki yok yakında olacak gibi bakalım :)
         </div>
     )
 }
