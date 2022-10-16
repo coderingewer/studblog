@@ -7,8 +7,8 @@ import "./UserInfoForm.css";
 
 function Login() {
   const success = localStorage.getItem("logined")
-  const user = useSelector((state) => state.users.logineduser);
   const message = useSelector((state) => state.users.message);
+  const userId = useSelector(state=>state.users.userId)
   const dispatch = useDispatch();
 
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
@@ -57,7 +57,7 @@ function Login() {
             Giriş Yap
           </button>
         </form>
-        {success && <Navigate to={"/profile/1"} replace={true} />}
+        {success && <Navigate to={"/profile/"+userId} replace={true} />}
       </div>
     </div>
   );

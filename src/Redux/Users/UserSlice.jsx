@@ -101,6 +101,7 @@ export const userSlice = createSlice({
     loading: false,
     user: {},
     message: "",
+    userId:0,
     logineduserId: localStorage.getItem("loggineduserId"),
   },
   reducers: {
@@ -122,6 +123,7 @@ export const userSlice = createSlice({
       localStorage.setItem("token", action.payload.token);
       localStorage.setItem("logined", true);
       localStorage.setItem("loggineduserId", action.payload.ID);
+      state.userId = action.payload.ID
       state.success = true;
       localStorage.setItem("user-valid", action.payload.isValid)
       state.loading = false;
