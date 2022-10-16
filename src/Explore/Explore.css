@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
   }
+
   .searchpost {
     top: 100px;
     width: 100%;
@@ -50,41 +51,48 @@
 
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
   }
+
+  .filtered-posts {
+    top: 150px;
+  }
 }
+
 @media only screen and (min-width: 1001px) {
   .Explore-page {
     display: none;
   }
 
-  .filtered-posts-close{
+  .filtered-posts-close {
     position: absolute;
   }
+
+  .filtered-posts {
+    top: 70px;
+  }
+
 }
 
-
-.filtered-posts-list{
+.filtered-posts-list {
   overflow: scroll;
   height: 100%;
-  width: 90%;
+  width: 100%;
 }
 
-.filtered-posts{
+.filtered-posts {
   position: absolute;
   display: none;
   width: 300px;
   height: 300px;
   border-radius: 10px;
   padding: 20px;
-  top: 200px;
   z-index: 2;
   box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.2);
   background-color: rgb(255, 255, 255);
 }
 
 
-.filtered-posts-close{
+.filtered-posts-close {
   z-index: 2;
   left: -10px;
   top: -10px;
 }
-
