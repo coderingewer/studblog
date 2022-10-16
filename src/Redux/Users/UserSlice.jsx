@@ -132,6 +132,7 @@ export const userSlice = createSlice({
     },
 
     [getUserByIdAsync.fulfilled]: (state, action) => {
+      state.user = {};
       state.user = action.payload;
     },
 
