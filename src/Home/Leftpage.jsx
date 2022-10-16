@@ -12,6 +12,7 @@ import { IoSchoolOutline } from "react-icons/io5"
 import { TbMapSearch } from "react-icons/tb"
 
 function Leftpage() {
+  const userId = localStorage.getItem("loggineduserId")
   const category = useSelector(state => state.posts.currentcategory)
   return (
     <div id="leftpage">
@@ -104,7 +105,7 @@ function Leftpage() {
             <MdOutlineCreate />
           </div>
         </Link>
-        <Link className="link" to="/profile/1">
+        <Link className="link" to={"/profile/"+userId}>
           <div className="icon edit-sidebar-icon">
             <CgProfile />
           </div>

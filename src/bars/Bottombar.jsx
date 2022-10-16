@@ -5,6 +5,7 @@ import {CgProfile, CgSearchLoading} from "react-icons/cg"
 import { AiOutlineHome } from "react-icons/ai";
 
 function Bottombar() {
+  const userId = localStorage.getItem("loggineduserId")
   return (
     <div id="bottombar">
       <Link className="link" to="/explore">
@@ -17,7 +18,7 @@ function Bottombar() {
         <AiOutlineHome />
       </div>
       </Link>
-      <Link className="link" to="/profile/1">
+      <Link className="link" to={"/profile/"+userId}>
       <div className="icon" id="user-icon">
         <CgProfile />
       </div>
