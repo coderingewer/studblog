@@ -53,7 +53,6 @@ function UpdateImage() {
           Yükle
         </button>
         <a
-          aria-disabled={loading ? true : false}
           className="link cancel"
           href="/">İptal</a>
       </div>
