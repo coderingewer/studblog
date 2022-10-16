@@ -55,7 +55,7 @@ function Profile() {
               <button onClick={() => siggnOut()} className="signout-btn" >Çıkış Yap</button>
               <Link className="edit-profile-link" to={"/edituser/" + user.ID} >düzenle</Link>
               <img src={user.userImageUrl} alt="" />
-              <Link className="link" to={"/updateimage/" + user.userImageId}>
+              <Link className="link" to="/useravatar/" >
                 <div className="edit-pp-icon"><RiImageEditLine /></div>
               </Link>
               <h1 className="name">{user.name}</h1>

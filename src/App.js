@@ -22,6 +22,7 @@ import UpdatePost from './Post/UpdatePost';
 import AddCoverImage from './Post/AddCoverImage';
 import UpdateImage from './Media/UpdateImage';
 import User from './User/User';
+import UpdateUseAvatar from './Media/UpdateUserAvatar';
 
 function App() {
   const success = useSelector(state => state.users.user);
@@ -48,6 +49,7 @@ function App() {
           <Route path='/posts/:category' element={<GetPostsByCategory />} />
           <Route path='/be-blogger' element={<BeBlogger />} />
           <Route path='/edituser/:userId' element={<EditUser />} />
+          <Route path='/useravatar' element={<UpdateUseAvatar />} />
           <Route path='/updatepost/:postId' element={<UpdatePost />} />
         </Routes>
       </Router>
