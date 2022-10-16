@@ -123,7 +123,6 @@ export const userSlice = createSlice({
       localStorage.setItem("loggineduserId", action.payload.ID);
       state.success = true;
       localStorage.setItem("user-valid", action.payload.isValid)
-      console.log(action)
       state.loading = false;
     },
     [loginAsync.rejected]: (state, action) => {

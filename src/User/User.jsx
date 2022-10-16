@@ -23,13 +23,11 @@ function User() {
   const siggnOut = async () => {
     dispatch(signOut())
   }
-
   useEffect(() => {
     document.title = "Studblog | " + user.name
     dispatch(getUserByIdAsync(userId));
     dispatch(getUserPost(userId));
   }, [dispatch]);
-  console.log(user)
   return (
     <>
       <div className="profile">

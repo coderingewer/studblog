@@ -65,6 +65,15 @@
 .form-items:hover {
   box-shadow: 0px 0px 6px rgba(192, 231, 102, 0.438);
 }
+
+@media only screen and (max-width: 1000px) {
+
 .formdiv{
   width: 100%;
 }
+}
+
+@media only screen and (min-width: 1001px) {
+  .formdiv{
+    width: 550px;
+  }}

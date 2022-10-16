@@ -52,10 +52,10 @@ function UpdateImage() {
           className="file-btn" onClick={uploadFile}>
           Yükle
         </button>
-        <Link
+        <a
           aria-disabled={loading ? true : false}
           className="link cancel"
-          to={-1}>İptal</Link>
+          href="/">İptal</a>
       </div>
     </div>
   );

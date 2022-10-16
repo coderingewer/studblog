@@ -126,7 +126,7 @@ function Post() {
       </div>
       <Bottombar/>
       <PopularPosts />
-      {deleted &&<Navigate to= {-1}/>}
+      {deleted &&<Navigate to= "/"/>}
     </>
   );
 }

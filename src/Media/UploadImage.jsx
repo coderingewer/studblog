@@ -19,7 +19,6 @@ function UploadImage() {
     formData.append("file", file);
     formData.append("fileName", fileName);
     await dispact(uploadImageAsync(formData));
-    console.log(formData);
   };
   return (
     <div className="media-form">

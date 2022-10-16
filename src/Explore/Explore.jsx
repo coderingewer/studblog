@@ -27,7 +27,7 @@ function Explore() {
       <div className="Explore-page">
         <div className="searchpost">
           <input type="text" onChange={(e)=>hadleSearch(e.target.value)} placeholder="Ara bulamazsan canımız sağ olsun." />
-          <button onClick={() => console.log("Hello")}>
+          <button>
             <RiSearch2Line />
           </button>
         </div>

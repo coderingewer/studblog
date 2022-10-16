@@ -150,12 +150,10 @@ const PostSlice = createSlice({
       state.currentcategory = action.meta.arg
     },
     [UpdatePost.fulfilled]: (state, action) => {
-      console.log(action.payload)
     },
     [addPostsAsync.fulfilled]: (state, action) => {
       state.posted = true;
       state.imageId = action.payload.imageId;
-      console.log(action.payload)
     },
     [deletePost.fulfilled]:(state, action)=>{
       state.deleted = true

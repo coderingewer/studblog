@@ -3,7 +3,6 @@ import "./Navbar.css";
 import logo from "../logo.png";
 import { Link } from "react-router-dom";
 import editicon from "../icons/Edit.svg";
-import {AiOutlineMenu} from "react-icons/ai"
 import Usericon from "../icons/User.svg";
 function Navbar() {
   return (

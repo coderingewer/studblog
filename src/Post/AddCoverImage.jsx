@@ -6,7 +6,6 @@ import "./Addpost.css"
 
 function AddCoverImage() {
   const uploaded = useSelector(state=>state.medias.uplaoded)
-  console.log(uploaded)
   document.title = "Studblog | Gönderi kapak Fotoğrafı"
   return (
     <div className='add-coverimg' >

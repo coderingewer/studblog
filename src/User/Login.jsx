@@ -27,7 +27,6 @@ function Login() {
         resetForm();
       },
     });
-  console.log(message)
   return (
     <div className="formdiv">
       <div id="user-info-form">
