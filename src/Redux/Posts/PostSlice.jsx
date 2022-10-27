@@ -83,7 +83,7 @@ export const updatePost = createAsyncThunk(
 );
 
 export const deletePost = createAsyncThunk(
-  "posts/deleteP0st",
+  "posts/deletePost",
   async (id) => {
     const res = await axios.delete(
       `${process.env.REACT_APP_REQUEST_DOMAIN}posts/delete/` + id,
