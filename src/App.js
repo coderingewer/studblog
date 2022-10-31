@@ -4,7 +4,6 @@ import Home from './Home/Home';
 import Post from './Post/Post';
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import Profile from './User/Profile';
 import Login from './User/Login';
 import PostEditor from './Post/Addpost';
 import Leftpage from './Home/Leftpage';
@@ -34,7 +33,7 @@ function App() {
       <Leftpage/>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/profile/:userId' element={ <Profile />} />
+          <Route path='/profile/:userId' element={ <User />} />
           <Route path='/user/:userId' element={ <User />} />
           <Route path='/loginrequest' element={ <UnLoginPage />} />
           <Route path='/lists' element={<ListCard />} />

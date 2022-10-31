@@ -71,12 +71,11 @@
     margin-right: 40px;
     font-size: 14px;
   }
-  .edit-pp-icon{
+  .edit-pp-icon {
     left: 30px;
-
   }
 
-  .noprofile-page{
+  .noprofile-page {
     width: 100%;
   }
 }
@@ -192,14 +191,12 @@
   .profilepage-btns {
     display: none;
   }
-  .edit-pp-icon{
+  .edit-pp-icon {
     left: 120px;
-
   }
-  .noprofile-page{
+  .noprofile-page {
     width: 500px;
   }
-  
 }
 
 .profile-nav {
@@ -219,7 +216,7 @@
   position: relative;
 }
 
-.noprofile-page{
+.noprofile-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -233,23 +230,22 @@
   border-radius: 10px;
 }
 
-.signup-btn{
+.signup-btn {
   margin-top: 10px;
   box-shadow: 0px 0px 11px rgba(6, 241, 65, 0.5);
 }
 
-.login-btn{
+.login-btn {
   margin-bottom: 10px;
   box-shadow: 0px 0px 11px rgba(211, 192, 19, 0.5);
 }
 
-
-.noprofile-page p{
+.noprofile-page p {
   font-size: 16px;
   font-weight: 700;
 }
 
-.signout-btn{
+.signout-btn {
   position: absolute;
   z-index: 2;
   border: none;
@@ -260,23 +256,21 @@
   font-size: 14px;
   font-weight: 700;
   border-radius: 10px;
-background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 
-.edit-profile-link{
+.edit-profile-link {
   padding: 5px;
   position: absolute;
   right: 20px;
-  background-color:white;
-  top :50px;
-  text-decoration:  none;
+  background-color: white;
+  top: 50px;
+  text-decoration: none;
   border-radius: 10px;
   color: rgba(0, 78, 35, 0.753);
-
-
 }
 
-.edit-pp-icon{
+.edit-pp-icon {
   position: absolute;
   z-index: 3;
   background-color: white;
@@ -287,5 +281,37 @@ background-color: rgb(255, 255, 255);
   justify-content: center;
   top: 60px;
   border-radius: 50%;
-  box-shadow:  0pc 0px 11px rgba(0, 0, 0, 0.2);
+  box-shadow: 0pc 0px 11px rgba(0, 0, 0, 0.2);
+}
+
+.profile-drop {
+  background-color: rgb(255, 255, 255);
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  z-index: 5;
+  border-radius: 10px;
+  display: none;
+  box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.2);
+}
+
+.profile-more-btn {
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+}
+
+.profile-more-icon{
+  height: 100%;
+  width: 100%;
 }
