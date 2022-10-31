@@ -133,13 +133,18 @@ const PostSlice = createSlice({
   extraReducers: {
     [GetAllPosts.fulfilled]: (state, action) => {
       state.items = action.payload;
+      state.posted = false;
+      state.deleted = false
     },
     [getUserPost.fulfilled]: (state, action) => {
+      state.posted = false;
       state.userposts = action.payload;
+      state.deleted = false
     },
     [GetPostByIdAsync.fulfilled]: (state, action) => {
       console.log("paylod: " + action.payload);
       state.item = [];
+      state.deleted = false
       state.item = action.payload;
     },
     [GetPopularPosts.fulfilled]: (state, action) => {

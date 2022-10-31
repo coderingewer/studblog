@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Bottombar from "../bars/Bottombar";
 import PostCard from "../Post/PostCard";
+import { resetResult } from "../Redux/Media/MediaSlice";
 import { GetAllPosts } from "../Redux/Posts/PostSlice";
 import "./HomePage.css";
 import PopularPosts from "./PopularPosts";
@@ -12,6 +13,7 @@ function Home() {
 
   useEffect(() => {
     dispatch(GetAllPosts());
+    dispatch(resetResult())
   }, [dispatch]);
   document.title = "Studblog | Ana Sayfa"
   return (

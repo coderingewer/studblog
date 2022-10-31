@@ -17,7 +17,7 @@ function PostEditor() {
   const posted = useSelector(state => state.posts.posted)
   const logined = localStorage.getItem("logined");
 
-  const valid = user.isValid ? user.isValid : localStorage.getItem("user-valid")
+  const valid = user.isValid ? user.isValid : Boolean(localStorage.getItem("user-valid"))
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
     useFormik({
       initialValues: {
@@ -66,7 +66,7 @@ function PostEditor() {
     "Tanıtım",
     "Diğer",
   ];
-  document.title = "Studblog | Gönderi oluştur"
+  document.title = "Gönderi oluştur"
   return (
     <>
       {valid === true ?
@@ -130,7 +130,7 @@ function PostEditor() {
           {!logined ? <UnLoginPage /> : <BeBlogger />}
         </>
       }
-      {posted && <Navigate to={"/coverimage/" + imageId} />}
+      {posted && <Navigate to={"/coverimage/" + imageId} replace ={true} />}
     </>
   );
 }

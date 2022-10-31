@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { addPostsAsync, GetAllPosts } from "../Posts/PostSlice";
 
 
 export const uploadImageAsync = createAsyncThunk(
@@ -41,7 +42,13 @@ const MediaSlice = createSlice({
     loading: false,
     success: false,
   },
-  reducers: {},
+  reducers: {
+    resetResult : (state, action) =>{
+      state.uplaoded = false;
+      state.success = false
+    }
+
+  },
   extraReducers: {
     [uploadImageAsync.pending]: (state, action) => {
     },
@@ -63,8 +70,8 @@ const MediaSlice = createSlice({
     [updateImageAsync.rejected]: (state, action) => {
       state.loading = false
       state.success = false
-    },
+    }
   },
 });
-
+export const {resetResult} =  MediaSlice.actions
 export default MediaSlice.reducer;

@@ -24,6 +24,9 @@
   .be-blogger-page{
     width: 100%;
   }
+  .add-coverimg{
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 1001px) {
@@ -59,6 +62,9 @@
   }
 
   .be-blogger-page{
+    width: 500px;
+  }
+  .add-coverimg{
     width: 500px;
   }
 }
@@ -106,7 +112,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
 .add-coverimg p{

@@ -32,6 +32,7 @@ function Profile() {
       document.title = "Studblog |  Profilim"
     }
   }, [dispatch]);
+  console.log(user)
   return (
     <>
       {logined ?
