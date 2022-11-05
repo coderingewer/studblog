@@ -34,7 +34,7 @@ function User() {
   };
 
   useEffect(() => {
-    document.title = "Studblog | " + user.name;
+    document.title = "Studblog"
     dispatch(getUserByIdAsync(userId));
     dispatch(getUserPost(userId));
   }, [dispatch]);

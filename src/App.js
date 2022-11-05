@@ -22,6 +22,7 @@ import AddCoverImage from './Post/AddCoverImage';
 import UpdateImage from './Media/UpdateImage';
 import User from './User/User';
 import UpdateUseAvatar from './Media/UpdateUserAvatar';
+import Profile from './User/Profile';
 
 function App() {
   const success = useSelector(state => state.users.user);
@@ -33,7 +34,7 @@ function App() {
       <Leftpage/>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/profile/:userId' element={ <User />} />
+          <Route path='/profile/:userId' element={ <Profile />} />
           <Route path='/user/:userId' element={ <User />} />
           <Route path='/loginrequest' element={ <UnLoginPage />} />
           <Route path='/lists' element={<ListCard />} />
