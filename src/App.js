@@ -23,7 +23,6 @@ import User from './User/User';
 import UpdateUseAvatar from './Media/UpdateUserAvatar';
 import Profile from './User/Profile';
 
-
 function App() {
   const success = useSelector(state => state.users.user);
   const logined = localStorage.getItem('logined');
@@ -33,11 +32,8 @@ function App() {
       <Leftpage/>
       <Navbar/>
         <Routes>
-          <Route path='/*' element={<Home />} >
-          <Route  path='profile' element={ <div/>} >
-          <Route index path=':userId' element={ <Profile/>} />
-            </Route>
-          </Route>
+          <Route path='/' element={<Home />} />
+          <Route path='/profile/:userId' element={ <Profile />} />
           <Route path='/user/:userId' element={ <User />} />
           <Route path='/loginrequest' element={ <UnLoginPage />} />
           <Route path='/lists' element={<ListCard />} />
