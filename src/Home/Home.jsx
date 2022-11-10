@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Bottombar from "../bars/Bottombar";
+import Navbar from "../bars/Navbar";
 import PostCard from "../Post/PostCard";
 import { resetResult } from "../Redux/Media/MediaSlice";
 import { GetAllPosts } from "../Redux/Posts/PostSlice";
 import "./HomePage.css";
+import Leftpage from "./Leftpage";
 import PopularPosts from "./PopularPosts";
 
 function Home() {

@@ -2,8 +2,7 @@ import './App.css';
 import Navbar from './bars/Navbar';
 import Home from './Home/Home';
 import Post from './Post/Post';
-import { Routes, Route } from "react-router-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from './User/Login';
 import PostEditor from './Post/Addpost';
 import Leftpage from './Home/Leftpage';
@@ -23,15 +22,16 @@ import UpdateImage from './Media/UpdateImage';
 import User from './User/User';
 import UpdateUseAvatar from './Media/UpdateUserAvatar';
 import Profile from './User/Profile';
+import Blog from './Blog';
 
 function App() {
   const success = useSelector(state => state.users.user);
   const logined = localStorage.getItem('logined');
   return (
     <header className="App">
-      <Router>
-      <Navbar/>
+      <BrowserRouter>
       <Leftpage/>
+      <Navbar/>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/profile/:userId' element={ <Profile />} />
@@ -52,7 +52,7 @@ function App() {
           <Route path='/useravatar' element={<UpdateUseAvatar />} />
           <Route path='/updatepost/:postId' element={<UpdatePost />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
     </header>
   );
 }

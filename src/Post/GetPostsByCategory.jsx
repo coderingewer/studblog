@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router'
 import Bottombar from '../bars/Bottombar'
+import PopularPosts from '../Home/PopularPosts'
 import { GetByCategory, GetPopularPosts } from '../Redux/Posts/PostSlice'
 import PostCard from './PostCard'
 
@@ -30,6 +31,7 @@ function GetPostsByCategory() {
                     )))}
                 </div>
             </div>
+            <PopularPosts/>
             <Bottombar />
         </>
     )
