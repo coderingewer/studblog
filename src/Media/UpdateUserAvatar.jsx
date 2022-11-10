@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
+import Navbar from "../bars/Navbar";
+import Leftpage from "../Home/Leftpage";
 import { updateImageAsync } from "../Redux/Media/MediaSlice";
 import { editUserAvatarAsync } from "../Redux/Users/UserSlice";
 import "./Media.css";
@@ -10,10 +12,9 @@ function UpdateUseAvatar() {
   const dispact = useDispatch();
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState("");
-  const success = useSelector(state => state.users.success)
-  const userId = parseInt(localStorage.getItem("loggineduserId"))
-  const loading = useSelector(state => state.users.loading)
-
+  const success = useSelector((state) => state.users.success);
+  const userId = parseInt(localStorage.getItem("loggineduserId"));
+  const loading = useSelector((state) => state.users.loading);
 
   const saveFile = (e) => {
     setFile(e.target.files[0]);
@@ -26,40 +27,46 @@ function UpdateUseAvatar() {
     formData.append("fileName", fileName);
     await dispact(editUserAvatarAsync(formData));
   };
-  console.log(success)
+  console.log(success);
   return (
-    <div className="media-form">
-      <div className="media-form-card" >
-        <div className="file-name">
-          <p>{fileName}</p>
-        </div>
-        <div>
-          <input
-            disabled={loading ? true : false}
-            id="file-input"
-            type="file"
-            accept=".jpg, .png, .jpeg, .gif,"
-            onChange={saveFile}
-          />
+    <>
+      <Navbar />
+      <Leftpage />
+      <div className="media-form">
+        <div className="media-form-card">
+          <div className="file-name">
+            <p>{fileName}</p>
+          </div>
+          <div>
+            <input
+              disabled={loading ? true : false}
+              id="file-input"
+              type="file"
+              accept=".jpg, .png, .jpeg, .gif,"
+              onChange={saveFile}
+            />
+            <button
+              disabled={loading ? true : false}
+              className="file-btn"
+              onClick={() => document.getElementById("file-input").click()}
+            >
+              Fotoğraf Seç
+            </button>
+          </div>
           <button
             disabled={loading ? true : false}
             className="file-btn"
-            onClick={() => document.getElementById("file-input").click()}
+            onClick={uploadFile}
           >
-            Fotoğraf Seç
+            Yükle
           </button>
+          <Link className="link cancel" to={-1}>
+            İptal
+          </Link>
         </div>
-        <button
-          disabled={loading ? true : false}
-          className="file-btn" onClick={uploadFile}>
-          Yükle
-        </button>
-        <Link
-          className="link cancel"
-          to={-1}>İptal</Link>
+        {success === true && <Navigate to={"/user/" + userId} replace={true} />}
       </div>
-      {success === true && <Navigate to={"/user/" + userId} replace={true} />}
-    </div>
+    </>
   );
 }
 

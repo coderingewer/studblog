@@ -3,21 +3,25 @@ import { useFormik } from "formik";
 import React, { useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import "./Addpost.css";
-import validationSchema from "./Validations"
+import validationSchema from "./Validations";
 import { useDispatch, useSelector } from "react-redux";
 import { addPostsAsync } from "../Redux/Posts/PostSlice";
 import { Navigate } from "react-router";
-import BeBlogger from "./BeBlogger.jsx"
+import BeBlogger from "./BeBlogger.jsx";
 import UnLoginPage from "../User/UnLoginPage";
+import Leftpage from "../Home/Leftpage";
+import Navbar from "../bars/Navbar";
 
 function PostEditor() {
   const dispatch = useDispatch();
-  const user = useSelector(state => state.users.user)
-  const imageId = useSelector(state => state.posts.imageId)
-  const posted = useSelector(state => state.posts.posted)
+  const user = useSelector((state) => state.users.user);
+  const imageId = useSelector((state) => state.posts.imageId);
+  const posted = useSelector((state) => state.posts.posted);
   const logined = localStorage.getItem("logined");
 
-  const valid = user.isValid ? user.isValid : Boolean(localStorage.getItem("user-valid"))
+  const valid = user.isValid
+    ? user.isValid
+    : Boolean(localStorage.getItem("user-valid"));
   const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
     useFormik({
       initialValues: {
@@ -34,7 +38,7 @@ function PostEditor() {
             category: values.category,
           })
         );
-      }
+      },
     });
   const uploadFile = async (cb, file) => {
     const formData = new FormData();
@@ -66,13 +70,21 @@ function PostEditor() {
     "Tanıtım",
     "Diğer",
   ];
-  document.title = "Gönderi oluştur"
+  document.title = "Gönderi oluştur";
   return (
     <>
-      {valid === true ?
+      <Leftpage />
+      <Navbar />
+      {valid === true ? (
         <div id="addpost">
           <form id="editor-form" onSubmit={handleSubmit}>
-            <label>Başlık  <div className="error-message" > {errors.title && touched.title && (errors.title)}</div></label>
+            <label>
+              Başlık{" "}
+              <div className="error-message">
+                {" "}
+                {errors.title && touched.title && errors.title}
+              </div>
+            </label>
             <input
               className="form-input"
               type="text"
@@ -82,14 +94,21 @@ function PostEditor() {
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            <label>Kategori <div className="error-message" > {errors.category && touched.category && (errors.category)}</div></label>
+            <label>
+              Kategori{" "}
+              <div className="error-message">
+                {" "}
+                {errors.category && touched.category && errors.category}
+              </div>
+            </label>
             <select
               type="text"
               className="form-input"
               placeholder="Kategori"
               name="category"
               value={values.category}
-              onChange={handleChange} title
+              onChange={handleChange}
+              title
               onBlur={handleBlur}
             >
               {categories.map((category, i) => (
@@ -121,16 +140,23 @@ function PostEditor() {
                   "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
               }}
             />
-            <button disabled={errors && values.title === "" && values.category === "" ? true : false} id="editor-form-btn" type="submit">
+            <button
+              disabled={
+                errors && values.title === "" && values.category === ""
+                  ? true
+                  : false
+              }
+              id="editor-form-btn"
+              type="submit"
+            >
               Sonraki
             </button>
           </form>
         </div>
-        : <>
-          {!logined ? <UnLoginPage /> : <BeBlogger />}
-        </>
-      }
-      {posted && <Navigate to={"/coverimage/" + imageId} replace ={true} />}
+      ) : (
+        <>{!logined ? <UnLoginPage /> : <BeBlogger />}</>
+      )}
+      {posted && <Navigate to={"/coverimage/" + imageId} replace={true} />}
     </>
   );
 }

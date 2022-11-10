@@ -17,9 +17,11 @@ function Home() {
     dispatch(GetAllPosts());
     dispatch(resetResult())
   }, [dispatch]);
-  document.title = "Studblog | Ana Sayfa"
+  document.title = "Studblog | Teras"
   return (
     <>
+    <Leftpage/>
+      <Navbar/>
       <div id="home-page">
         <div id="posts">
           {posts.map((post) => (

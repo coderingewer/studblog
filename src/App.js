@@ -2,7 +2,7 @@ import './App.css';
 import Navbar from './bars/Navbar';
 import Home from './Home/Home';
 import Post from './Post/Post';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from './User/Login';
 import PostEditor from './Post/Addpost';
 import Leftpage from './Home/Leftpage';
@@ -22,6 +22,7 @@ import UpdateImage from './Media/UpdateImage';
 import User from './User/User';
 import UpdateUseAvatar from './Media/UpdateUserAvatar';
 import Profile from './User/Profile';
+import Adminpanel from './Admin/Adminpanel';
 
 function App() {
   const success = useSelector(state => state.users.user);
@@ -29,20 +30,17 @@ function App() {
   return (
     <header className="App">
       <BrowserRouter>
-      <Leftpage/>
-      <Navbar/>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Navigate to="/teras" />} />
+          <Route path='/teras' element={<Home/>} />
           <Route path='/profile/:userId' element={ <Profile />} />
           <Route path='/user/:userId' element={ <User />} />
           <Route path='/loginrequest' element={ <UnLoginPage />} />
-          <Route path='/lists' element={<ListCard />} />
           <Route path='/createpost/' element={<PostEditor />} />
           <Route path='/post/:postId' element={<Post />} />
           <Route path='/login/' element={<Login />} />
           <Route path='/register/' element={<Register/>} />
           <Route path='/explore' element={<Explore />} />
-          <Route path='/uploadimage' element={<UploadImage />} />
           <Route path='/updateimage/:imageId' element={<UpdateImage />} />
           <Route path='/coverimage/:imageId' element={<AddCoverImage />} />
           <Route path='/posts/:category' element={<GetPostsByCategory />} />
@@ -50,6 +48,7 @@ function App() {
           <Route path='/edituser/:userId' element={<EditUser />} />
           <Route path='/useravatar' element={<UpdateUseAvatar />} />
           <Route path='/updatepost/:postId' element={<UpdatePost />} />
+          <Route path='/admin' element={<Adminpanel />} />
         </Routes>
       </BrowserRouter>
     </header>

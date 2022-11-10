@@ -10,6 +10,8 @@ import ListCard from "../Lists/ListCard";
 import { MdOutlineCreate } from "react-icons/md";
 import { RiImageEditLine, RiMore2Fill } from "react-icons/ri";
 import Profilesrop from "./Profilesrop";
+import Leftpage from "../Home/Leftpage";
+import Navbar from "../bars/Navbar";
 
 function User() {
   const dispatch = useDispatch();
@@ -34,12 +36,14 @@ function User() {
   };
 
   useEffect(() => {
-    document.title = "Studblog"
+    document.title = "Studblog";
     dispatch(getUserByIdAsync(userId));
     dispatch(getUserPost(userId));
   }, [dispatch]);
   return (
     <>
+      <Leftpage />
+      <Navbar />
       <div className="profile">
         <div id="profile-posts">
           <div className="profile-nav">
@@ -66,17 +70,17 @@ function User() {
           <div id="profile-details">
             {loggineduserId === user.ID && (
               <div>
-              <button
-                onClick={
-                  !status
-                    ? () => OpenCard("profile-more-card")
-                    : () => CloseCard("profile-more-card")
-                }
-                className="profile-more-btn"
-              >
-                <RiMore2Fill className="profile-more-icon"/>
-              </button>
-              <Profilesrop/>
+                <button
+                  onClick={
+                    !status
+                      ? () => OpenCard("profile-more-card")
+                      : () => CloseCard("profile-more-card")
+                  }
+                  className="profile-more-btn"
+                >
+                  <RiMore2Fill className="profile-more-icon" />
+                </button>
+                <Profilesrop />
               </div>
             )}
             <img src={user.userImageUrl} alt="" />

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { RiSearch2Line } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import Bottombar from "../bars/Bottombar";
+import Navbar from "../bars/Navbar";
 import NoPhotoPostCard from "../Post/NoPhotoPostCard";
 import PostCard from "../Post/PostCard";
 import { GetAllPosts, GetPopularPosts, searchPosts } from "../Redux/Posts/PostSlice";
@@ -24,6 +25,7 @@ function Explore() {
   }
   return (
     <>
+      <Navbar/>
       <div className="Explore-page">
         <div className="searchpost">
           <input type="text" onChange={(e)=>hadleSearch(e.target.value)} placeholder="Ara bulamazsan canımız sağ olsun." />
