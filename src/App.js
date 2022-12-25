@@ -23,6 +23,7 @@ import User from './User/User';
 import UpdateUseAvatar from './Media/UpdateUserAvatar';
 import Profile from './User/Profile';
 import Adminpanel from './Admin/Adminpanel';
+import Teras from './Home/Teras';
 
 function App() {
   const success = useSelector(state => state.users.user);
@@ -31,24 +32,9 @@ function App() {
     <header className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Navigate to="/teras" />} />
-          <Route path='/teras' element={<Home/>} />
-          <Route path='/profile/:userId' element={ <Profile />} />
-          <Route path='/user/:userId' element={ <User />} />
-          <Route path='/loginrequest' element={ <UnLoginPage />} />
-          <Route path='/createpost/' element={<PostEditor />} />
-          <Route path='/post/:postId' element={<Post />} />
-          <Route path='/login/' element={<Login />} />
-          <Route path='/register/' element={<Register/>} />
-          <Route path='/explore' element={<Explore />} />
-          <Route path='/updateimage/:imageId' element={<UpdateImage />} />
-          <Route path='/coverimage/:imageId' element={<AddCoverImage />} />
-          <Route path='/posts/:category' element={<GetPostsByCategory />} />
-          <Route path='/be-blogger' element={<BeBlogger />} />
-          <Route path='/edituser/:userId' element={<EditUser />} />
-          <Route path='/useravatar' element={<UpdateUseAvatar />} />
-          <Route path='/updatepost/:postId' element={<UpdatePost />} />
-          <Route path='/admin' element={<Adminpanel />} />
+          <Route path='/' element={<Home/>} />
+          <Route path='/teras/*' element={<Teras/>} />
+          <Route path='/login' element={<Login/>} />
         </Routes>
       </BrowserRouter>
     </header>

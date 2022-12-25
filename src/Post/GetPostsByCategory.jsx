@@ -18,8 +18,6 @@ function GetPostsByCategory() {
   }, [dispatch]);
   return (
     <>
-      <Leftpage />
-      <Navbar />
       <div id="home-page">
         <div id="posts">
           {posts.map((post) => (
@@ -35,8 +33,6 @@ function GetPostsByCategory() {
           ))}
         </div>
       </div>
-      <PopularPosts />
-      <Bottombar />
     </>
   );
 }

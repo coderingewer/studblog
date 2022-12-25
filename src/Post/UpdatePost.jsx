@@ -65,8 +65,6 @@ function UpdatePost() {
   ];
   return (
     <>
-      <Leftpage />
-      <Navbar />
       <div id="addpost">
         <div className="update-post-img">
           <Link className="link" to={"/coverimage/" + post.imageId}>

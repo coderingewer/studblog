@@ -73,8 +73,6 @@ function PostEditor() {
   document.title = "Gönderi oluştur";
   return (
     <>
-      <Leftpage />
-      <Navbar />
       {valid === true ? (
         <div id="addpost">
           <form id="editor-form" onSubmit={handleSubmit}>

@@ -16,11 +16,11 @@ function Leftpage() {
   const category = useSelector(state => state.posts.currentcategory)
   return (
     <div id="leftpage">
-      <a href="/" className="link">
+      <Link to="/" className="link">
         <div id="studblog-side-logo">
           <img src={logo} alt="StudBlog" />
         </div>
-      </a>
+      </Link>
       <div id="categories">
         <div className="category-area">
           <div id={category === "teknoloji" ? "tech" : "disabled"} className="category">
@@ -100,12 +100,12 @@ function Leftpage() {
         </div>
       </div>
       <div className="user-buttons">
-        <Link className="link" to="/createpost">
+        <Link className="link" to="/teras/createpost">
           <div className=" icon user-sidebar-icon">
             <MdOutlineCreate />
           </div>
         </Link>
-        <Link className="link" to={"/profile/"+userId}>
+        <Link className="link" to={"/teras/profile/"+userId}>
           <div className="icon edit-sidebar-icon">
             <CgProfile />
           </div>

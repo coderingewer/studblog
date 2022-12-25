@@ -8,8 +8,6 @@ import "./Profile.css";
 function UnLoginPage() {
   return (
     <>
-      <Leftpage />
-      <Navbar />
       <div className="noprofile-page">
         <Link className="link login-btn" to="/login">
           Giriş Yap{" "}
@@ -18,7 +16,6 @@ function UnLoginPage() {
         <Link className="link signup-btn" to="/register">
           Kayıt Ol{" "}
         </Link>
-        <Bottombar />
       </div>
     </>
   );

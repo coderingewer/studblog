@@ -1,10 +1,15 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Route, Routes } from "react-router";
 import Bottombar from "../bars/Bottombar";
 import Navbar from "../bars/Navbar";
+import PostEditor from "../Post/Addpost";
 import PostCard from "../Post/PostCard";
 import { resetResult } from "../Redux/Media/MediaSlice";
 import { GetAllPosts } from "../Redux/Posts/PostSlice";
+import Profile from "../User/Profile";
+import UnLoginPage from "../User/UnLoginPage";
+import User from "../User/User";
 import "./HomePage.css";
 import Leftpage from "./Leftpage";
 import PopularPosts from "./PopularPosts";
@@ -15,13 +20,13 @@ function Home() {
 
   useEffect(() => {
     dispatch(GetAllPosts());
-    dispatch(resetResult())
+    dispatch(resetResult());
   }, [dispatch]);
-  document.title = "Studblog | Teras"
+  document.title = "Studblog | Teras";
   return (
     <>
-    <Leftpage/>
-      <Navbar/>
+      <Leftpage />
+      <Navbar />
       <div id="home-page">
         <div id="posts">
           {posts.map((post) => (
@@ -39,7 +44,6 @@ function Home() {
         </div>
         <PopularPosts />
       </div>
-      <Bottombar />
     </>
   );
 }

@@ -42,8 +42,6 @@ function User() {
   }, [dispatch]);
   return (
     <>
-      <Leftpage />
-      <Navbar />
       <div className="profile">
         <div id="profile-posts">
           <div className="profile-nav">

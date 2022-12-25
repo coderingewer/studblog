@@ -30,8 +30,6 @@ function UpdateUseAvatar() {
   console.log(success);
   return (
     <>
-      <Navbar />
-      <Leftpage />
       <div className="media-form">
         <div className="media-form-card">
           <div className="file-name">

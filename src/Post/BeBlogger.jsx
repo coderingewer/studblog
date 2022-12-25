@@ -6,8 +6,6 @@ import "./Addpost.css";
 function BeBlogger() {
   return (
     <>
-      <Leftpage />
-      <Navbar />
       <div className="be-blogger-page">
         <p>Yazar Değil misiniz?</p>
         <a
