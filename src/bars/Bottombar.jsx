@@ -18,7 +18,7 @@ function Bottombar() {
         <AiOutlineHome />
       </div>
       </Link>
-      <Link className="link" to={"/profile/"+userId}>
+      <Link className="link" to={"/deneb/profile/"+userId}>
       <div className="icon" id="user-icon">
         <CgProfile />
       </div>

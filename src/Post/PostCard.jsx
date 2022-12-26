@@ -19,22 +19,22 @@ function PostCard(props) {
   return (
     <div id="post-card">
       <div className="card-body">
-        <Link className="link" to={"/post/" + props.postId}>
-          <div id="post-title">
+        <div id="post-title">
+          <Link className="link" to={"/deneb/post/" + props.postId}>
             <p>{props.title}</p>
-          </div>
-        </Link>
+          </Link>
+        </div> 
         <div id="postcard-img">
           <img src={props.imgurl} alt="" />
         </div>
       </div>
       <div id="cardbuttons" className="card-btns">
-          <Link className="link" to={"/user/" + props.authorId}>
-        <div id="postpp">
+        <Link className="link" to={"/deneb/user/" + props.authorId}>
+          <div id="postpp">
             <img src={props.authorpp} alt="" />
             <h1>{props.authorname}</h1>
-        </div>
-          </Link>
+          </div>
+        </Link>
         <div
           onClick={
             !status

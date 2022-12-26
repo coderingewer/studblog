@@ -2,7 +2,7 @@
   height: 100vh;
   display: flex;
   flex-direction: row;
-}
+ }
 
 .title h1 {
   font-size: 24px;

@@ -1,10 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
-import Bottombar from "../bars/Bottombar";
-import Navbar from "../bars/Navbar";
-import Leftpage from "../Home/Leftpage";
-import PopularPosts from "../Home/PopularPosts";
 import { GetByCategory } from "../Redux/Posts/PostSlice";
 import PostCard from "./PostCard";
 
@@ -13,13 +9,12 @@ function GetPostsByCategory() {
   const { category } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(GetByCategory(category));
     document.title = "Studblog | " + category;
+    dispatch(GetByCategory(category))
   }, [dispatch]);
   return (
     <>
       <div id="home-page">
-        <div id="posts">
           {posts.map((post) => (
             <div key={post.ID}>
               <PostCard
@@ -31,7 +26,6 @@ function GetPostsByCategory() {
               />
             </div>
           ))}
-        </div>
       </div>
     </>
   );

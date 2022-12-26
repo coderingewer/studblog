@@ -10,20 +10,9 @@ import Register from './User/Register';
 import Explore from './Explore/Explore';
 import ListCard from './Lists/ListCard';
 import React from 'react';
-import UnLoginPage from './User/UnLoginPage';
 import { useSelector } from 'react-redux';
-import UploadImage from './Media/UploadImage';
+import Deneb from './Routes/Deneb';
 import GetPostsByCategory from './Post/GetPostsByCategory';
-import BeBlogger from './Post/BeBlogger';
-import EditUser from './User/EditUser';
-import UpdatePost from './Post/UpdatePost';
-import AddCoverImage from './Post/AddCoverImage';
-import UpdateImage from './Media/UpdateImage';
-import User from './User/User';
-import UpdateUseAvatar from './Media/UpdateUserAvatar';
-import Profile from './User/Profile';
-import Adminpanel from './Admin/Adminpanel';
-import Teras from './Home/Teras';
 
 function App() {
   const success = useSelector(state => state.users.user);
@@ -32,8 +21,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/teras/*' element={<Teras/>} />
+          <Route path='/' element={<Navigate to="/deneb"/>} />
+          <Route path='/deneb/*' element={<Deneb/>} />
           <Route path='/login' element={<Login/>} />
         </Routes>
       </BrowserRouter>

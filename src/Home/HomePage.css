@@ -4,16 +4,15 @@
     position: relative;
     top: 100px;
     width: 90%;
+    height: 100%;
     margin: 0 auto;
+    padding-bottom: 100px;
   }
   #popular {
     display: none;
   }
   #leftpage {
     display: none;
-  }
-  #posts {
-    padding-bottom: 100px;
   }
 }
 
@@ -26,17 +25,6 @@
     padding-right: 2.5%;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
-  }
-
-  #posts {
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     overflow: scroll;
   }
 }

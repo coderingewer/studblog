@@ -10,26 +10,29 @@ import Profile from "../User/Profile";
 import Register from "../User/Register";
 import UnLoginPage from "../User/UnLoginPage";
 import User from "../User/User";
-import Home from "./Home";
-import Leftpage from "./Leftpage";
+import Home from "../Home/Home";
+import Leftpage from "../Home/Leftpage";
+import Explore from "../Explore/Explore";
+import PopularPosts from "../Home/PopularPosts";
+import { GetByCategory } from "../Redux/Posts/PostSlice";
+import GetPostsByCategory from "../Post/GetPostsByCategory";
 
-function Teras() {
+function Deneb() {
   return (
     <>
       <Leftpage />
       <Navbar />
-      <Bottombar />
       <Routes>
-        <Route path="/profile/:userId" element={<Profile />} />
+        <Route path="/" element={<Home />} />
         <Route path="/user/:userId" element={<User />} />
-        <Route path="/user/updateavatar" element={<UpdateUseAvatar />} />
-        <Route path="/teras/login" element={<Register />} />
-        <Route path="/loginrequest" element={<UnLoginPage />} />
-        <Route path="/createpost/" element={<PostEditor />} />
         <Route path="/post/:postId" element={<Post />} />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/posts/:category" element={<GetPostsByCategory />} />
       </Routes>
+      <PopularPosts/>
+      <Bottombar />
     </>
   );
 }
 
-export default Teras;
+export default Deneb;

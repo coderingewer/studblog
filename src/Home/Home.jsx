@@ -16,12 +16,10 @@ function Home() {
   useEffect(() => {
     dispatch(GetAllPosts());
     dispatch(resetResult());
+    document.title = "Deneb";
   }, [dispatch]);
-  document.title = "Studblog | Teras";
   return (
     <>
-      <Leftpage />
-      <Navbar />
       <div id="home-page">
           {posts.map((post) => (
             <div key={post.ID}>
@@ -36,8 +34,6 @@ function Home() {
             </div>
           ))}
       </div>
-        <PopularPosts />
-        <Bottombar/>
     </>
   );
 }
