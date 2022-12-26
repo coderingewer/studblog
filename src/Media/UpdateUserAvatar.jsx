@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useParams } from "react-router";
+import { Navigate } from "react-router";
 import { Link } from "react-router-dom";
-import Navbar from "../bars/Navbar";
-import Leftpage from "../Home/Leftpage";
-import { updateImageAsync } from "../Redux/Media/MediaSlice";
 import { editUserAvatarAsync } from "../Redux/Users/UserSlice";
 import "./Media.css";
 
@@ -27,7 +24,6 @@ function UpdateUseAvatar() {
     formData.append("fileName", fileName);
     await dispact(editUserAvatarAsync(formData));
   };
-  console.log(success);
   return (
     <>
       <div className="media-form">

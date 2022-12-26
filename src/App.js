@@ -29,7 +29,7 @@ function App() {
   const success = useSelector(state => state.users.user);
   const logined = localStorage.getItem('logined');
   return (
-    <header className="App">
+    <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home/>} />
@@ -37,7 +37,7 @@ function App() {
           <Route path='/login' element={<Login/>} />
         </Routes>
       </BrowserRouter>
-    </header>
+    </div>
   );
 }
 
