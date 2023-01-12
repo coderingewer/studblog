@@ -39,8 +39,6 @@ function Password() {
 
   return (
     <>
-      <Leftpage />
-      <Navbar />
       <div className="edit-user-dizayn">
         <div id="edit-password">
           <p>Şifreyi düzenle</p>

@@ -10,7 +10,7 @@ function NoPhotoPostCard(props) {
             <img src={props.userpp}/>
         </div>
         <div className="no-img-postcard-content">
-        <Link className='link' to = {"/post/"+ props.postId}>  
+        <Link className='link' to = {"/deneb/post/"+ props.postId}>  
         <p>{props.content}</p>
         </Link>
         </div>

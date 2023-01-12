@@ -15,7 +15,7 @@ function Profilesrop() {
       <button onClick={() => siggnOut()} className="signout-btn">
         Çıkış Yap
       </button>
-      <Link className="edit-profile-link" to={"/edituser/" + user.ID}>
+      <Link className="edit-profile-link" to={"/altair/edituser/" + user.ID}>
         düzenle
       </Link>
     </div>

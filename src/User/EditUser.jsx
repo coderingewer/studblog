@@ -34,8 +34,6 @@ function EditUser() {
     });
   return (
     <>
-      <Leftpage />
-      <Navbar />
       <div className="edit-user-dizayn">
         <div id="edit-user">
           <p>Profili düzenle</p>

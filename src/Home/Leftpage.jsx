@@ -115,7 +115,7 @@ function Leftpage() {
             <MdOutlineCreate />
           </div>
         </Link>
-        <Link className="link" to={"/teras/profile/" + userId}>
+        <Link className="link" to={"/altair/profile/" + userId}>
           <div className="icon edit-sidebar-icon">
             <CgProfile />
           </div>
