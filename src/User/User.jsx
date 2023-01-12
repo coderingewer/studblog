@@ -11,7 +11,6 @@ import { MdOutlineCreate } from "react-icons/md";
 import { RiImageEditLine, RiMore2Fill } from "react-icons/ri";
 import Profilesrop from "./Profilesrop";
 import Leftpage from "../Home/Leftpage";
-import Navbar from "../bars/Navbar";
 
 function User() {
   const dispatch = useDispatch();

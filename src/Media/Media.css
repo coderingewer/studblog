@@ -6,14 +6,14 @@
 
 @media only screen and (min-width: 1001px) {
     .media-form {
-        width: 500px;
+        width: 300px;
+        padding: 50px;
     }
 }
 
 
 .media-form {
     display: flex;
-    width: 100%;
     padding: 10px;
     align-items: center;
     justify-content: center;

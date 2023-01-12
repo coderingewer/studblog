@@ -5,9 +5,6 @@ import PostCard from "../Post/PostCard";
 import { resetResult } from "../Redux/Media/MediaSlice";
 import { GetAllPosts } from "../Redux/Posts/PostSlice";
 import "./HomePage.css";
-import Leftpage from "./Leftpage";
-import PopularPosts from "./PopularPosts";
-import Bottombar from "../bars/Bottombar"
 
 function Home() {
   const dispatch = useDispatch();

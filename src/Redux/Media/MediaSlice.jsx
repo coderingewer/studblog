@@ -1,7 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { useDispatch } from "react-redux";
-import { addPostsAsync, GetAllPosts } from "../Posts/PostSlice";
 
 
 export const uploadImageAsync = createAsyncThunk(

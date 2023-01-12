@@ -58,7 +58,7 @@ function UpdateUseAvatar() {
             İptal
           </Link>
         </div>
-        {success === true && <Navigate to={"/user/" + userId} replace={true} />}
+        {success === true && <Navigate to={"/altair/profile/" + userId} replace={true} />}
       </div>
     </>
   );

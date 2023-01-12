@@ -13,6 +13,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Deneb from './Routes/Deneb';
 import GetPostsByCategory from './Post/GetPostsByCategory';
+import Altair from './Routes/Altair';
 
 function App() {
   const success = useSelector(state => state.users.user);
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Navigate to="/deneb"/>} />
           <Route path='/deneb/*' element={<Deneb/>} />
+          <Route path='/altair/*' element={<Altair/>} />
           <Route path='/login' element={<Login/>} />
         </Routes>
       </BrowserRouter>

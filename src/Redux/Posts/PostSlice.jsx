@@ -82,6 +82,23 @@ export const updatePost = createAsyncThunk(
   }
 );
 
+export const updatePostImage = createAsyncThunk(
+  "posts/updatePost",
+  async (data) => {
+    const res = await axios.post(
+      `${process.env.REACT_APP_REQUEST_DOMAIN}posts/update/` + data.id,
+      data,
+      {
+        headers: {
+          Authorization: `token ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+    console.log(data);
+    return res.data;
+  }
+);
+
 export const deletePost = createAsyncThunk(
   "posts/deletePost",
   async (id) => {
